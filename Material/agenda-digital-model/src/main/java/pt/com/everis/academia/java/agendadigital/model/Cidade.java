@@ -2,24 +2,27 @@ package pt.com.everis.academia.java.agendadigital.model;
 
 public class Cidade {
 
-	private Integer codigo;
+	private Short codigo;
 	private String nome;
-
+	
 	public Cidade() {
 		super();
 	}
-
-	public Cidade(Integer codigo, String nome) {
-		super();
+	public Cidade(Short codigo) {
+		this();
 		this.codigo = codigo;
+	}
+	public Cidade(Short codigo, String nome) {
+		
+		this(codigo);
 		this.nome = nome;
 	}
 
-	public Integer getCodigo() {
+	public Short getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(Integer codigo) {
+	public void setCodigo(Short codigo) {
 		this.codigo = codigo;
 	}
 
@@ -30,6 +33,7 @@ public class Cidade {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
 
 	@Override
 	public String toString() {

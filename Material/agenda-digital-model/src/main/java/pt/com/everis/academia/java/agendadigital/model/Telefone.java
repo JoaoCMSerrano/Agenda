@@ -1,20 +1,13 @@
 package pt.com.everis.academia.java.agendadigital.model;
 
 public class Telefone {
-	
+
 	private Integer codigo;
-	private Integer ddd;
 	private Integer numero;
+	private PrestadorServico prestadorServico;
 
 	public Telefone() {
 		super();
-	}
-	
-	public Telefone(Integer codigo, Integer ddd, Integer numero) {
-		super();
-		this.codigo = codigo;
-		this.ddd = ddd;
-		this.numero = numero;
 	}
 
 	public Integer getCodigo() {
@@ -25,14 +18,6 @@ public class Telefone {
 		this.codigo = codigo;
 	}
 
-	public Integer getDdd() {
-		return ddd;
-	}
-
-	public void setDdd(Integer ddd) {
-		this.ddd = ddd;
-	}
-
 	public Integer getNumero() {
 		return numero;
 	}
@@ -41,10 +26,17 @@ public class Telefone {
 		this.numero = numero;
 	}
 
+	public PrestadorServico getPrestadorServico() {
+		return prestadorServico;
+	}
+
+	public void setPrestadorServico(PrestadorServico prestadorServico) {
+		this.prestadorServico = prestadorServico;
+	}
 
 	@Override
 	public String toString() {
-		return "Telefone [codigo=" + codigo + ", ddd=" + ddd + ", numero=" + numero + "]";
+		return "Telefone [codigo=" + codigo + ", numero=" + numero + "]";
 	}
-	
+
 }

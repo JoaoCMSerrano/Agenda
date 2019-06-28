@@ -1,24 +1,28 @@
 package pt.com.everis.academia.java.agendadigital.model;
 
 public class TipoServico {
-	private Integer codigo;
+	private Short codigo;
 	private String descricao;
 
 	public TipoServico() {
 		super();
 	}
 
-	public TipoServico(Integer codigo, String descricao) {
-		super();
+	public TipoServico(Short codigo) {
+		this();
 		this.codigo = codigo;
+	}
+
+	public TipoServico(Short codigo, String descricao) {
+		this(codigo);
 		this.descricao = descricao;
 	}
 
-	public Integer getCodigo() {
+	public Short getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(Integer codigo) {
+	public void setCodigo(Short codigo) {
 		this.codigo = codigo;
 	}
 

@@ -1,11 +1,18 @@
 package pt.com.everis.academia.java.agendadigital.model;
 
 import java.util.Date;
+import java.util.Set;
 
 public class PrestacaoServico {
+	
 	private Integer codigo;
 	private Date data;
 	private PrestadorServico prestador;
+	private Set<ServicoPrestado> servicoPrestado;
+	
+	public PrestacaoServico() {
+		super();
+	}
 	
 	public PrestacaoServico(Integer codigo, Date data, PrestadorServico prestador) {
 		this.codigo = codigo;
@@ -37,6 +44,13 @@ public class PrestacaoServico {
 		this.prestador = prestador;
 	}
 
+	public Set<ServicoPrestado> getServicoPrestado() {
+		return servicoPrestado;
+	}
+
+	public void setServicoPrestado(Set<ServicoPrestado> servicoPrestado) {
+		this.servicoPrestado = servicoPrestado;
+	}
 
 	@Override
 	public String toString() {

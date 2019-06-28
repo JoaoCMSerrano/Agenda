@@ -1,5 +1,7 @@
 package pt.com.everis.academia.java.agendadigital.model;
 
+import java.util.Set;
+
 import pt.com.everis.academia.java.agendadigital.enums.TipoLogradouro;
 
 public class PrestadorServico {
@@ -14,23 +16,18 @@ public class PrestadorServico {
 	private String complemento;
 	private String numero;
 	private String email;
-
+	private Set<Telefone> telefones;
+	private Set<TipoServico> servicosCredenciados;
+	private Set<PrestacaoServico> prestacoesServicos;
+	
 	public PrestadorServico() {
 		super();
 	}
 
-	public PrestadorServico(Integer codigo, String nome, Cidade cidade, String bairro, String cep, TipoLogradouro tipoLogradouro, String logradouro, String complemento, String numero, String email) {
-		super();
+	public PrestadorServico(Integer codigo) {
+		
+		this();
 		this.codigo = codigo;
-		this.nome = nome;
-		this.cidade = cidade;
-		this.bairro = bairro;
-		this.cep = cep;
-		this.tipoLogradouro = tipoLogradouro;
-		this.logradouro = logradouro;
-		this.complemento = complemento;
-		this.numero = numero;
-		this.email = email;
 	}
 
 	public Integer getCodigo() {
@@ -47,14 +44,6 @@ public class PrestadorServico {
 
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-
-	public Cidade getCidade() {
-		return cidade;
-	}
-
-	public void setCidade(Cidade cidade) {
-		this.cidade = cidade;
 	}
 
 	public String getBairro() {
@@ -111,6 +100,38 @@ public class PrestadorServico {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public Cidade getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(Cidade cidade) {
+		this.cidade = cidade;
+	}
+
+	public Set<Telefone> getTelefones() {
+		return telefones;
+	}
+
+	public void setTelefones(Set<Telefone> telefones) {
+		this.telefones = telefones;
+	}
+
+	public Set<TipoServico> getServicosCredenciados() {
+		return servicosCredenciados;
+	}
+
+	public void setServicosCredenciados(Set<TipoServico> servicosCredenciados) {
+		this.servicosCredenciados = servicosCredenciados;
+	}
+
+	public Set<PrestacaoServico> getPrestacoesServicos() {
+		return prestacoesServicos;
+	}
+
+	public void setPrestacoesServicos(Set<PrestacaoServico> prestacoesServicos) {
+		this.prestacoesServicos = prestacoesServicos;
 	}
 
 }
