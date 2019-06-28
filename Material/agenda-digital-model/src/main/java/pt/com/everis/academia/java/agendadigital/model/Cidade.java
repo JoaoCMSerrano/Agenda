@@ -8,10 +8,12 @@ public class Cidade {
 	public Cidade() {
 		super();
 	}
+	
 	public Cidade(Short codigo) {
 		this();
 		this.codigo = codigo;
 	}
+	
 	public Cidade(Short codigo, String nome) {
 		
 		this(codigo);
