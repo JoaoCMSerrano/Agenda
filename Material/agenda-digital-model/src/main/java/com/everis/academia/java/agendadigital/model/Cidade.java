@@ -1,4 +1,4 @@
-package pt.com.everis.academia.java.agendadigital.model;
+package com.everis.academia.java.agendadigital.model;
 
 public class Cidade {
 
@@ -35,7 +35,6 @@ public class Cidade {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
 
 	@Override
 	public String toString() {

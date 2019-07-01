@@ -1,8 +1,8 @@
-package pt.com.everis.academia.java.agendadigital.model;
+package com.everis.academia.java.agendadigital.model;
 
 import java.util.Set;
 
-import pt.com.everis.academia.java.agendadigital.enums.TipoLogradouro;
+import com.everis.academia.java.agendadigital.enums.TipoLogradouro;
 
 public class PrestadorServico {
 

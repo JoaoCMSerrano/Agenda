@@ -1,4 +1,4 @@
-package pt.com.everis.academia.java.agendadigital.model;
+package com.everis.academia.java.agendadigital.model;
 
 public class ServicoPrestado {
 	
