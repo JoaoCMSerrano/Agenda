@@ -23,14 +23,19 @@ public class CidadeEditController extends HttpServlet {
 
 		Short id = Short.valueOf(request.getParameter("id"));
 		String nome = request.getParameter("nome");
-		
+
+		// Validar se está vazia
+		if (nome == null || nome.trim().isEmpty()) {
+			throw new ServletException("Nome obrigatório");
+		}
+
 		// Validação
 		for(Cidade cidade : CidadeDao.cidades) {
-			if(cidade.getNome() == nome) {
+			if(cidade.getNome().trim().equalsIgnoreCase(nome) && !(cidade.getCodigo()==id)) {
 				throw new ServletException("Esse nome de cidade já existe");
 			}		
 		}
-		
+
 		// Modificar nome da cidade
 		Cidade cidade = new Cidade(id, nome);	
 		int index = CidadeDao.cidades.indexOf(cidade);

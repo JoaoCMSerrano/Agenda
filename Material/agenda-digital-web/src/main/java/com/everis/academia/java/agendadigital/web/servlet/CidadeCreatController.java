@@ -34,8 +34,8 @@ public class CidadeCreatController extends HttpServlet {
 		
 		// Verificar se já existe
 		for(Cidade cidade : CidadeDao.cidades) {
-			if(cidade.getNome() == nome) {
-				throw new ServletException("Esse nome de cidade já exist");
+			if(cidade.getNome().trim().equalsIgnoreCase(nome)) {
+				throw new ServletException("Esse nome de cidade já existe");
 			}		
 		}
 

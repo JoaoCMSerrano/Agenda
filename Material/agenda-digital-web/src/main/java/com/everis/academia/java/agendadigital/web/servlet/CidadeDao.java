@@ -9,10 +9,4 @@ public class CidadeDao {
 
 	public static List<Cidade> cidades = new ArrayList<Cidade>();
 
-	/* Poderia fazer...
-	public static void creat(Cidade cidade) {}
-	public static void read() {}
-	public static void update(Cidade cidade) {}
-	public static void delete(Short id) {}
-	 */
 }  
