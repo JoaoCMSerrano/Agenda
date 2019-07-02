@@ -21,12 +21,13 @@ public class CidadeDelete extends HttpServlet{
 		Short id = Short.valueOf(request.getParameter("id"));
 		String nome = request.getParameter("nome");
 		
-		CidadeDao.cidades.remove(new Cidade(id,nome));	//Necessita equals no Cidade
+		CidadeDao.cidades.remove(new Cidade(id,nome));		//Necessita equals no Cidade
+		// CidadeDao.cidades.remove(new Cidade(id,nome));	//Sem loop explicito, sem necessidade de implementaçao de equals
 		
 		PrintWriter out = response.getWriter();
 		out.println("<html>");
 		out.println("<body>");
-		out.println("Eliminado com sucesso");
+		out.println("Eliminado com sucesso<br>");
 		out.println("<td><a href=\"http://localhost:8080/agenda-digital-web/cidadelist\">Voltar para a Lista</a></td>");
 		out.println("</body>");
 		out.println("</html>");

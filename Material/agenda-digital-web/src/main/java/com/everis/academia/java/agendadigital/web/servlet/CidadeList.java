@@ -23,7 +23,7 @@ public class CidadeList extends HttpServlet{
 		out.println("<html>");
 		out.println("<body>");
 		out.println("<table border=\"1\">");
-		out.println("Formulário de Cidades<br><br>");
+		out.println("Lista de Cidades<br><br>");
 		out.println("<a href=\"http://localhost:8080/agenda-digital-web/cidadecreat\">Adicionar</a><br>");
 		out.println("<tr><td>Id</td><td>Cidade</td><td>Editar</td><td>Eliminar</td></tr>");
 		for(Cidade cidade : CidadeDao.cidades) {
