@@ -24,12 +24,12 @@ public class CidadeEditController extends HttpServlet {
 		Short id = Short.valueOf(request.getParameter("id"));
 		String nome = request.getParameter("nome");
 
-		// Validar se está vazia
+		// Validar se o nome é vazio
 		if (nome == null || nome.trim().isEmpty()) {
 			throw new ServletException("Nome obrigatório");
 		}
 
-		// Validação
+		// Validar se existe
 		for(Cidade cidade : CidadeDao.cidades) {
 			if(cidade.getNome().trim().equalsIgnoreCase(nome) && !(cidade.getCodigo()==id)) {
 				throw new ServletException("Esse nome de cidade já existe");

@@ -27,12 +27,12 @@ public class CidadeCreatController extends HttpServlet {
 		// Recuperar dados
 		String nome = request.getParameter("nome");
 
-		// Validar dados
+		// Validar se o nome é vazio
 		if (nome == null || nome.trim().isEmpty()) {
 			throw new ServletException("Nome obrigatório");
 		}
 		
-		// Verificar se já existe
+		// Validar se existe
 		for(Cidade cidade : CidadeDao.cidades) {
 			if(cidade.getNome().trim().equalsIgnoreCase(nome)) {
 				throw new ServletException("Esse nome de cidade já existe");
