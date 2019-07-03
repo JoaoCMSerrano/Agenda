@@ -17,7 +17,6 @@
 	<name>agenda-digital-web Maven Webapp</name>
 
 	<dependencies>
-		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
@@ -26,8 +25,7 @@
 
 		<dependency>
 			<groupId>com.everis.academia.java</groupId>
-			<artifactId>agenda-digital-model</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<artifactId>agenda-digital-business</artifactId>
 		</dependency>
 	</dependencies>
 
