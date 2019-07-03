@@ -19,6 +19,7 @@ public class CidadeList extends HttpServlet{
 
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		PrintWriter out = response.getWriter();
 		out.println("<html>");
 		out.println("<body>");
@@ -27,10 +28,10 @@ public class CidadeList extends HttpServlet{
 		out.println("<a href=\"http://localhost:8080/agenda-digital-web/cidadecreat\">Adicionar</a><br>");
 		out.println("<tr><td>Id</td><td>Cidade</td><td>Editar</td><td>Eliminar</td></tr>");
 		for(Cidade cidade : CidadeDao.cidades) {
-			out.write("<tr><td>" + cidade.getCodigo() + "</td>");
-			out.write("<td>" + cidade.getNome() + "</td>");
-			out.write("<td><a href=\"http://localhost:8080/agenda-digital-web/cidadeedit?id=" + cidade.getCodigo() + "&nome=" + cidade.getNome() +"\">X</a></td>");
-			out.write("<td><a href=\"http://localhost:8080/agenda-digital-web/cidadedelete?id=" + cidade.getCodigo() + "&nome=" + cidade.getNome() + "\">X</a></td></tr>");
+			out.println("<tr><td>" + cidade.getCodigo() + "</td>");
+			out.println("<td>" + cidade.getNome() + "</td>");
+			out.println("<td><a href=\"http://localhost:8080/agenda-digital-web/cidadeedit?id=" + cidade.getCodigo() + "&nome=" + cidade.getNome() +"\">X</a></td>");
+			out.println("<td><a href=\"http://localhost:8080/agenda-digital-web/cidadedelete?id=" + cidade.getCodigo() + "&nome=" + cidade.getNome() + "\">X</a></td></tr>");
 		}
 		out.println("</table>");
 		out.println("</body>");

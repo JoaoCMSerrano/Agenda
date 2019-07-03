@@ -20,36 +20,36 @@ public class CidadeEditController extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		
+		// Recuperar dados
 		Short id = Short.valueOf(request.getParameter("id"));
 		String nome = request.getParameter("nome");
 
 		// Validar se o nome é vazio
 		if (nome == null || nome.trim().isEmpty()) {
-			throw new ServletException("Nome obrigatório");
+			throw new ServletException("Nome obrigatório.");
 		}
 
-		// Validar se existe
+		// Validar se o nome já se encontra na lista e se, caso se encontre, não se trate do mesmo
 		for(Cidade cidade : CidadeDao.cidades) {
 			if(cidade.getNome().trim().equalsIgnoreCase(nome) && !(cidade.getCodigo()==id)) {
-				throw new ServletException("Esse nome de cidade já existe");
-			}		
+				throw new ServletException("Esse nome de cidade já existe.");
+			}
 		}
-
 		// Modificar nome da cidade
 		Cidade cidade = new Cidade(id, nome);	
 		int index = CidadeDao.cidades.indexOf(cidade);
 		CidadeDao.cidades.set(index, cidade);
 
 
-		// Imprimir informaçao
+		// Imprimir informação
 		PrintWriter out = response.getWriter();
-		out.write("<html>");
-		out.write("<body>");
-		out.write("Modificado com sucesso<br>");
-		out.write("<a href=\"http://localhost:8080/agenda-digital-web/cidadelist\">Voltar para a Lista</a><br>");
-		out.write("</body>");
-		out.write("</html>");
+		out.println("<html>");
+		out.println("<body>");
+		out.println("Modificado com sucesso.<br>");
+		out.println("<br><a href=\"http://localhost:8080/agenda-digital-web/cidadelist\">Voltar para a Lista</a><br>");
+		out.println("</body>");
+		out.println("</html>");
 
 	}
 }

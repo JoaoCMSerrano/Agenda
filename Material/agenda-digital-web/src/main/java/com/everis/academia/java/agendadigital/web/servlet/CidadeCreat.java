@@ -22,7 +22,7 @@ public class CidadeCreat extends HttpServlet{
 		out.println("<body>");
 		out.println("<form action=\"cidadecreatcontroller\">");
 		out.println("<table border=\"1\">");
-		out.println("<tr><td colspan=\"2\">Criar cidade</td></tr>");
+		out.println("Criar cidade<br><br>");
 		out.println("<tr><td>Nome:</td><td><input type=\"text\" name=\"nome\"></td></tr>");
 		out.println("<tr><td colspan=\"2\" align=\"center\">");
 		out.println("<input type=\"submit\" value=\"Enviar\">");

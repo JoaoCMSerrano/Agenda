@@ -23,7 +23,6 @@ public class CidadeCreatController extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		PrintWriter out = response.getWriter();
 		// Recuperar dados
 		String nome = request.getParameter("nome");
 
@@ -47,12 +46,13 @@ public class CidadeCreatController extends HttpServlet {
 		CidadeDao.cidades.add(cidade);
 		
 		// Imprimir informaçao
-		out.write("<html>");
-		out.write("<body>");
-		out.write("Registado com sucesso<br>");
-		out.write("<a href=\"http://localhost:8080/agenda-digital-web/cidadelist\">Voltar para a Lista</a><br>");
-		out.write("</body>");
-		out.write("</html>");
+		PrintWriter out = response.getWriter();
+		out.println("<html>");
+		out.println("<body>");
+		out.println("Registado com sucesso<br>");
+		out.println("<br><a href=\"http://localhost:8080/agenda-digital-web/cidadelist\">Voltar para a Lista</a><br>");
+		out.println("</body>");
+		out.println("</html>");
 	}
 
 }

@@ -18,17 +18,21 @@ public class CidadeDelete extends HttpServlet{
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		// Imprimir informação
 		Short id = Short.valueOf(request.getParameter("id"));
 		String nome = request.getParameter("nome");
 		
+		// Eliminar a cidade da lista
 		CidadeDao.cidades.remove(new Cidade(id,nome));		//Necessita equals no Cidade
-		// CidadeDao.cidades.remove(new Cidade(id,nome));	//Sem loop explicito, sem necessidade de implementaçao de equals
 		
+		// CidadeDao.cidades.remove(new Cidade(id,nome));	//Alternativa: sem loop explicito, sem necessidade de implementaçao de equals
+		
+		// Imprimir informação
 		PrintWriter out = response.getWriter();
 		out.println("<html>");
 		out.println("<body>");
 		out.println("Eliminado com sucesso<br>");
-		out.println("<td><a href=\"http://localhost:8080/agenda-digital-web/cidadelist\">Voltar para a Lista</a></td>");
+		out.println("<br><a href=\"http://localhost:8080/agenda-digital-web/cidadelist\">Voltar para a Lista</a>");
 		out.println("</body>");
 		out.println("</html>");
 	}
