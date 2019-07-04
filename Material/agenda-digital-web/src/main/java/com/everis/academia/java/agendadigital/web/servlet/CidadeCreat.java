@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "cidadecreat", urlPatterns = "/cidadecreat")
+@WebServlet(name = "cidadecreat", urlPatterns = "/cidade/creat")
 
 public class CidadeCreat extends HttpServlet{
 
@@ -20,7 +20,7 @@ public class CidadeCreat extends HttpServlet{
 		PrintWriter out = response.getWriter();
 		out.println("<html>");
 		out.println("<body>");
-		out.println("<form action=\"cidadecreatcontroller\">");
+		out.println("<form action=\"creatcontroller\">");
 		out.println("<table border=\"1\">");
 		out.println("Criar cidade<br><br>");
 		out.println("<tr><td>Nome:</td><td><input type=\"text\" name=\"nome\"></td></tr>");

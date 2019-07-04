@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "cidadeedit", urlPatterns = "/cidadeedit")
+@WebServlet(name = "cidade/edit", urlPatterns = "/cidade/edit")
 public class CidadeEdit extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -30,7 +30,7 @@ public class CidadeEdit extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.println("<html>");
 		out.println("<body>");
-		out.println("<form action=\"cidadeeditcontroller\">");
+		out.println("<form action=\"editcontroller\">");
 		out.println("<table border=\"1\">");
 		out.println("Editar Cidade<br><br>");
 		//out.println("<tr><td>Id:</td><td>" + id + "</td></tr>");
@@ -39,7 +39,7 @@ public class CidadeEdit extends HttpServlet {
 		out.println("</table>");
 		out.println("<input type=\"submit\" value=\"Enviar\">");
 		out.println("</form>");
-		out.println("<br><a href=\"http://localhost:8080/agenda-digital-web/cidadelist\">Voltar para a Lista</a>");
+		out.println("<br><a href=\"http://localhost:8080/agenda-digital-web/cidade/list\">Voltar para a Lista</a>");
 		out.println("</body>");
 		out.println("</html>");
 

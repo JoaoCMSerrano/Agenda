@@ -1,15 +1,11 @@
 package com.everis.academia.java.agendadigital.dao.impl;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
-
 import com.everis.academia.java.agendadigital.dao.ICidadeDAO;
 import com.everis.academia.java.agendadigital.model.Cidade;
 
-public abstract class CidadeDAO implements ICidadeDAO{
+public class CidadeDAOSet extends CidadeDAO implements ICidadeDAO {
 
-	public static Set<Cidade> cidades = new HashSet<Cidade>();
+/*	public static Set<Cidade> cidades = new HashSet<Cidade>();
 	
 	private static Short id = 0;
 	
@@ -27,14 +23,14 @@ public abstract class CidadeDAO implements ICidadeDAO{
 	public Collection<Cidade> read() {
 		return cidades;
 	}
-
+*/
 	@Override
 	public void update(Cidade cidade) {
-		// TODO Auto-generated method stub
-		
+		CidadeDAO.cidades.remove(new Cidade(cidade.getCodigo()));
+		CidadeDAO.cidades.add(cidade);
 	}
 
-	@Override
+/*	@Override
 	public void delete(Short id2) {
 		cidades.remove(new Cidade(id2));
 		
@@ -50,5 +46,5 @@ public abstract class CidadeDAO implements ICidadeDAO{
 		
 		return Boolean.FALSE;
 	}
-
+*/
 }

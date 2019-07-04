@@ -11,9 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.everis.academia.java.agendadigital.business.ICidadeBusiness;
 import com.everis.academia.java.agendadigital.business.impl.CidadeBusiness;
-import com.everis.academia.java.agendadigital.model.Cidade;
 
-@WebServlet(name = "cidadedelete", urlPatterns = "/cidadedelete")
+@WebServlet(name = "cidade/delete", urlPatterns = "/cidade/delete")
 
 public class CidadeDelete extends HttpServlet{
 
@@ -30,14 +29,14 @@ public class CidadeDelete extends HttpServlet{
 			Short id = Short.valueOf(request.getParameter("id"));
 
 			// Eliminar a cidade da lista
-			business.delete(new Cidade(id));
+			business.delete(id);
 
 			// Imprimir informaçao
 			PrintWriter out = response.getWriter();
 			out.println("<html>");
 			out.println("<body>");
 			out.println("Eliminado com sucesso<br>");
-			out.println("<br><a href=\"http://localhost:8080/agenda-digital-web/cidadelist\">Voltar para a Lista</a>");
+			out.println("<br><a href=\"http://localhost:8080/agenda-digital-web/cidade/list\">Voltar para a Lista</a>");
 			out.println("</body>");
 			out.println("</html>");
 

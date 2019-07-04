@@ -13,7 +13,7 @@ import com.everis.academia.java.agendadigital.business.ICidadeBusiness;
 import com.everis.academia.java.agendadigital.business.impl.CidadeBusiness;
 import com.everis.academia.java.agendadigital.model.Cidade;
 
-@WebServlet(name = "cidadeeditcontroller", urlPatterns = "/cidadeeditcontroller")
+@WebServlet(name = "cidade/editcontroller", urlPatterns = "/cidade/editcontroller")
 
 public class CidadeEditController extends HttpServlet {
 	
@@ -38,7 +38,7 @@ public class CidadeEditController extends HttpServlet {
 			out.println("<html>");
 			out.println("<body>");
 			out.println("Modificado com sucesso.<br>");
-			out.println("<br><a href=\"http://localhost:8080/agenda-digital-web/cidadelist\">Voltar para a Lista</a><br>");
+			out.println("<br><a href=\"http://localhost:8080/agenda-digital-web/cidade/list\">Voltar para a Lista</a><br>");
 			out.println("</body>");
 			out.println("</html>");
 

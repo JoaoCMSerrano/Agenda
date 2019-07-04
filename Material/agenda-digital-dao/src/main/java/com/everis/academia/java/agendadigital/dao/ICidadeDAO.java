@@ -5,13 +5,13 @@ import com.everis.academia.java.agendadigital.model.Cidade;
 
 public interface ICidadeDAO {
 	
-	void create(Cidade cidade);
+	void create(String nome);
 	
 	Collection<Cidade> read();
 	
 	void update(Cidade cidade);
 	
-	void delete(Cidade cidade);
+	void delete(Short id);
 	
 	Boolean jaExisteCidade(String nome);
 	
