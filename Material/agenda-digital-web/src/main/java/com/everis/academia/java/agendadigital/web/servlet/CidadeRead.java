@@ -13,9 +13,9 @@ import com.everis.academia.java.agendadigital.business.ICidadeBusiness;
 import com.everis.academia.java.agendadigital.business.impl.CidadeBusiness;
 import com.everis.academia.java.agendadigital.model.Cidade;
 
-@WebServlet(name = "cidade/list", urlPatterns = "/cidade/list")
+@WebServlet(name = "cidade/read", urlPatterns = "/cidade/read")
 
-public class CidadeList extends HttpServlet{
+public class CidadeRead extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
 
@@ -30,12 +30,12 @@ public class CidadeList extends HttpServlet{
 			out.println("<body>");
 			out.println("<table border=\"1\">");
 			out.println("Lista de Cidades<br><br>");
-			out.println("<a href=\"http://localhost:8080/agenda-digital-web/cidade/creat\">Adicionar</a><br>");
+			out.println("<a href=\"http://localhost:8080/agenda-digital-web/cidade/create\">Adicionar</a><br>");
 			out.println("<tr><td>Id</td><td>Cidade</td><td>Editar</td><td>Eliminar</td></tr>");
 			for(Cidade cidade : business.read()) {
 				out.println("<tr><td>" + cidade.getCodigo() + "</td>");
 				out.println("<td>" + cidade.getNome() + "</td>");
-				out.println("<td><a href=\"http://localhost:8080/agenda-digital-web/cidade/edit?id=" + cidade.getCodigo() + "&nome=" + cidade.getNome() + "\">X</a></td>");
+				out.println("<td><a href=\"http://localhost:8080/agenda-digital-web/cidade/update?id=" + cidade.getCodigo() + "&nome=" + cidade.getNome() + "\">X</a></td>");
 				out.println("<td><a href=\"http://localhost:8080/agenda-digital-web/cidade/delete?id=" + cidade.getCodigo() + "\">X</a></td></tr>");
 			}
 			out.println("</table>");

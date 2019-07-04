@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "cidade/edit", urlPatterns = "/cidade/edit")
-public class CidadeEdit extends HttpServlet {
+@WebServlet(name = "cidade/update", urlPatterns = "/cidade/update")
+public class CidadeUpdate extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
@@ -30,16 +30,15 @@ public class CidadeEdit extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.println("<html>");
 		out.println("<body>");
-		out.println("<form action=\"editcontroller\">");
+		out.println("<form action=\"updatecontroller\">");
 		out.println("<table border=\"1\">");
 		out.println("Editar Cidade<br><br>");
-		//out.println("<tr><td>Id:</td><td>" + id + "</td></tr>");
 		out.println("<tr><td>Id:</td><td><input type=\"text\" name=\"id\" readonly=\"true\" value=\"" + id + "\"</td></tr>");
 		out.println("<tr><td>Nome:</td><td><input type=\"text\" name=\"nome\" value=\"" + nome + "\"></td></tr>");
 		out.println("</table>");
 		out.println("<input type=\"submit\" value=\"Enviar\">");
 		out.println("</form>");
-		out.println("<br><a href=\"http://localhost:8080/agenda-digital-web/cidade/list\">Voltar para a Lista</a>");
+		out.println("<br><a href=\"http://localhost:8080/agenda-digital-web/cidade/read\">Voltar</a>");
 		out.println("</body>");
 		out.println("</html>");
 

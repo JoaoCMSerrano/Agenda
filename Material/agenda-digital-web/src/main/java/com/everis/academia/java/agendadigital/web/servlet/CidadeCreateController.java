@@ -12,9 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import com.everis.academia.java.agendadigital.business.ICidadeBusiness;
 import com.everis.academia.java.agendadigital.business.impl.CidadeBusiness;
 
-@WebServlet(name = "cidade/creatcontroller", urlPatterns = "/cidade/creatcontroller")
+@WebServlet(name = "cidade/createcontroller", urlPatterns = "/cidade/createcontroller")
 
-public class CidadeCreatController extends HttpServlet {
+public class CidadeCreateController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
@@ -36,7 +36,7 @@ public class CidadeCreatController extends HttpServlet {
 			out.println("<html>");
 			out.println("<body>");
 			out.println("Registado com sucesso<br>");
-			out.println("<br><a href=\"http://localhost:8080/agenda-digital-web/cidade/list\">Voltar para a Lista</a><br>");
+			out.println("<br><a href=\"http://localhost:8080/agenda-digital-web/cidade/read\">Voltar</a><br>");
 			out.println("</body>");
 			out.println("</html>");
 

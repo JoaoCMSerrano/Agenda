@@ -36,7 +36,7 @@ public class CidadeDelete extends HttpServlet{
 			out.println("<html>");
 			out.println("<body>");
 			out.println("Eliminado com sucesso<br>");
-			out.println("<br><a href=\"http://localhost:8080/agenda-digital-web/cidade/list\">Voltar para a Lista</a>");
+			out.println("<br><a href=\"http://localhost:8080/agenda-digital-web/cidade/read\">Voltar</a>");
 			out.println("</body>");
 			out.println("</html>");
 

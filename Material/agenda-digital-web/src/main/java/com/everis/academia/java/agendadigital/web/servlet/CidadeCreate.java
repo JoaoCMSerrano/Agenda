@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "cidadecreat", urlPatterns = "/cidade/creat")
+@WebServlet(name = "cidade/create", urlPatterns = "/cidade/create")
 
-public class CidadeCreat extends HttpServlet{
+public class CidadeCreate extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
 	
@@ -20,7 +20,7 @@ public class CidadeCreat extends HttpServlet{
 		PrintWriter out = response.getWriter();
 		out.println("<html>");
 		out.println("<body>");
-		out.println("<form action=\"creatcontroller\">");
+		out.println("<form action=\"createcontroller\">");
 		out.println("<table border=\"1\">");
 		out.println("Criar cidade<br><br>");
 		out.println("<tr><td>Nome:</td><td><input type=\"text\" name=\"nome\"></td></tr>");
