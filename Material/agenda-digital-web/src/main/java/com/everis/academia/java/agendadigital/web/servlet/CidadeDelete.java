@@ -34,9 +34,14 @@ public class CidadeDelete extends HttpServlet{
 			// Imprimir informaçao
 			PrintWriter out = response.getWriter();
 			out.println("<html>");
+			out.println("<head>");
+			out.println("<meta charset=\"ISO-8859-1\">");
+			out.println("<title>Cidade - Delete</title>");
+			out.println("</head>");
 			out.println("<body>");
-			out.println("Eliminado com sucesso<br>");
-			out.println("<br><a href=\"http://localhost:8080/agenda-digital-web/cidade/read\">Voltar</a>");
+			out.println("Eliminado com sucesso.<br><br>");
+			out.print("<a href=\"" + request.getContextPath() + "/cidade/read\">Voltar Servlet</a><br>");
+			out.print("<a href=\"" + request.getContextPath() + "/jsp/cidade/read.jsp\">Voltar JSP</a><br>");
 			out.println("</body>");
 			out.println("</html>");
 

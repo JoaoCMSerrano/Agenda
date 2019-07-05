@@ -34,9 +34,14 @@ public class CidadeCreateController extends HttpServlet {
 			// Imprimir informaçao
 			PrintWriter out = response.getWriter();
 			out.println("<html>");
+			out.println("<head>");
+			out.println("<meta charset=\"ISO-8859-1\">");
+			out.println("<title>Cidade - Create</title>");
+			out.println("</head>");
 			out.println("<body>");
-			out.println("Registado com sucesso<br>");
-			out.println("<br><a href=\"http://localhost:8080/agenda-digital-web/cidade/read\">Voltar</a><br>");
+			out.println("Registado com sucesso.<br><br>");
+			out.print("<a href=\"" + request.getContextPath() + "/cidade/read\">Voltar Servlet</a><br>");
+			out.print("<a href=\"" + request.getContextPath() + "/jsp/cidade/read.jsp\">Voltar JSP</a><br>");
 			out.println("</body>");
 			out.println("</html>");
 

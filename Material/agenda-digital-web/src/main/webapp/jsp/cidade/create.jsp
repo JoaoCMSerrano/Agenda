@@ -3,10 +3,13 @@
 
 <!DOCTYPE html>
 <html>
+	<head>
+		<%@include file="header.jsp" %>
+	</head>
 	<body>
 		<form action="<%=request.getContextPath()%>/cidade/createcontroller">
+		Criar cidade<br><br>
 			<table border="1">
-				Criar cidade<br><br>
 				<tr>
 					<td>Nome:</td>
 					<td><input type="text" name="nome"></td>

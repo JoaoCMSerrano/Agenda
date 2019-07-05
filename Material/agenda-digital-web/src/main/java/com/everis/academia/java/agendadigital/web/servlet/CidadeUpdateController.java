@@ -36,9 +36,14 @@ public class CidadeUpdateController extends HttpServlet {
 			// Imprimir informação
 			PrintWriter out = response.getWriter();
 			out.println("<html>");
+			out.println("<head>");
+			out.println("<meta charset=\"ISO-8859-1\">");
+			out.println("<title>Cidade - Update</title>");
+			out.println("</head>");
 			out.println("<body>");
 			out.println("Modificado com sucesso.<br>");
-			out.println("<br><a href=\"http://localhost:8080/agenda-digital-web/cidade/read\">Voltar</a><br>");
+			out.print("<br><a href=\"" + request.getContextPath() + "/cidade/read\">Voltar Servlet</a>");
+			out.print("<br><a href=\"" + request.getContextPath() + "/jsp/cidade/read.jsp\">Voltar JSP</a>");
 			out.println("</body>");
 			out.println("</html>");
 

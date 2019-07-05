@@ -19,6 +19,10 @@ public class CidadeCreate extends HttpServlet{
 
 		PrintWriter out = response.getWriter();
 		out.println("<html>");
+		out.println("<head>");
+		out.println("<meta charset=\"ISO-8859-1\">");
+		out.println("<title>Cidade - Create</title>");
+		out.println("</head>");
 		out.println("<body>");
 		out.println("<form action=\"createcontroller\">");
 		out.println("<table border=\"1\">");

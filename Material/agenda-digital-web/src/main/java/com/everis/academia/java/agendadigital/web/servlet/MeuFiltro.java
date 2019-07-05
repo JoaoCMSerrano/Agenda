@@ -14,7 +14,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 
-@WebFilter(filterName = "MeuFiltro", urlPatterns = "/cidade/*")
+@WebFilter(filterName = "MeuFiltro", urlPatterns = "/*")
 
 public class MeuFiltro implements Filter {
 
@@ -37,14 +37,14 @@ public class MeuFiltro implements Filter {
 
 		//Imprimir o recurso
 		String uri = ((HttpServletRequest) request).getRequestURI();
-		System.out.println("Página: " + uri);
+		System.out.print("Página: " + uri);
 
 		//Imprimir os parametros
 		Map<String, String[]> parametros = request.getParameterMap();
 		for (Entry<String, String[]> map : parametros.entrySet()) {
-			System.out.println(map.getKey() + ": " + Arrays.toString(map.getValue()));
+			System.out.print(" - " + map.getKey() + ": " + Arrays.toString(map.getValue()));
 		}
-		
+		System.out.println("");
 		/*
 		while(request.getAttributeNames().hasMoreElements()) {
 			

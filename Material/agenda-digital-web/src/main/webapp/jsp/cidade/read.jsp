@@ -2,22 +2,22 @@
 <%@ page import="com.everis.academia.java.agendadigital.model.Cidade" %>
 <%@ page import="com.everis.academia.java.agendadigital.business.impl.CidadeBusiness" %>
 <%@ page import="com.everis.academia.java.agendadigital.business.ICidadeBusiness" %>
+
 <%! 	
 	ICidadeBusiness business = new CidadeBusiness();
 %>
-<%--
-<%
-
-%> 
---%>
 
 <!DOCTYPE html>
 	
 <html>
+	<head>
+		<%@include file="header.jsp" %>
+	</head>
 	<body>
-		<table border="1">
-			Lista de Cidades<br><br>
-			<a href="<%=request.getContextPath()%>/jsp/cidade/create.jsp">Adicionar nova cidade</a><br>
+		Lista de Cidades<br>
+		<br><a href="<%=request.getContextPath()%>/jsp/cidade/create.jsp">Adicionar nova cidade</a>
+		<br><a href="<%=request.getContextPath()%>/cidade/read">Voltar para Servlet</a>
+		<br><table border="1">
 			<tr>
 				<td>Id</td>
 				<td>Cidade</td>
@@ -28,8 +28,8 @@
 			<tr>
 				<td><%=cidade.getCodigo()%></td>
 				<td><%=cidade.getNome()%></td>
-				<td><a href="http://localhost:8080/agenda-digital-web/cidade/update?id=<%=cidade.getCodigo()%>&nome=<%=cidade.getNome()%>">X</a></td>
-				<td><a href="http://localhost:8080/agenda-digital-web/cidade/delete?id=<%=cidade.getCodigo()%>">X</a></td>
+				<td><a href="<%=request.getContextPath()%>/jsp/cidade/update.jsp?id=<%=cidade.getCodigo()%>&nome=<%=cidade.getNome()%>">X</a></td>
+				<td><a href="<%=request.getContextPath()%>/cidade/delete?id=<%=cidade.getCodigo()%>">X</a></td>
 			</tr>
 			<% } %>
 		</table>

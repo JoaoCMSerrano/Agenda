@@ -29,6 +29,10 @@ public class CidadeUpdate extends HttpServlet {
 		// Imprimir informação
 		PrintWriter out = response.getWriter();
 		out.println("<html>");
+		out.println("<head>");
+		out.println("<meta charset=\"ISO-8859-1\">");
+		out.println("<title>Cidade - Update</title>");
+		out.println("</head>");
 		out.println("<body>");
 		out.println("<form action=\"updatecontroller\">");
 		out.println("<table border=\"1\">");
@@ -38,7 +42,8 @@ public class CidadeUpdate extends HttpServlet {
 		out.println("</table>");
 		out.println("<input type=\"submit\" value=\"Enviar\">");
 		out.println("</form>");
-		out.println("<br><a href=\"http://localhost:8080/agenda-digital-web/cidade/read\">Voltar</a>");
+		out.print("<a href=\"" + request.getContextPath() + "/cidade/read\">Voltar Servlet</a><br>");
+		out.print("<a href=\"" + request.getContextPath() + "/jsp/cidade/read.jsp\">Voltar JSP</a><br>");
 		out.println("</body>");
 		out.println("</html>");
 
