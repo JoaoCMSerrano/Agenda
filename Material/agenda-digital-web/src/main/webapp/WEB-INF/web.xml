@@ -4,16 +4,16 @@
 
 <web-app>
 	<display-name>Archetype Created Web Application</display-name>
-  
-<!--    <servlet> -->
-<!--    	<servlet-name>hello</servlet-name> -->
-<!--    	<servlet-class>com.everis.academia.java.agendadigital.web.servlet.Hello</servlet-class> -->
-<!--    </servlet> -->
-  
-<!--   <servlet-mapping> -->
-<!--   	<servlet-name>hello</servlet-name> -->
-<!--  	<url-pattern>/hello</url-pattern> -->
-<!--   </servlet-mapping> -->
+
+	<servlet>
+		<servlet-name>hello</servlet-name>
+		<servlet-class>com.everis.academia.java.agendadigital.web.servlet.Hello</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>hello</servlet-name>
+		<url-pattern>/hello</url-pattern>
+	</servlet-mapping>
+
 	<servlet>
 		<servlet-name>FacesServlet</servlet-name>
 		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
@@ -22,6 +22,19 @@
 	<servlet-mapping>
 		<servlet-name>FacesServlet</servlet-name>
 		<url-pattern>*.xhtml</url-pattern>
-	</servlet-mapping>  
-  	
+	</servlet-mapping>
+
+	<listener>
+		<listener-class>com.sun.xml.ws.transport.http.servlet.WSServletContextListener</listener-class>
+	</listener>
+
+	<servlet>
+		<servlet-name>JAXWSServlet</servlet-name>
+		<servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>JAXWSServlet</servlet-name>
+		<url-pattern>/soap</url-pattern>
+	</servlet-mapping>
 </web-app>
