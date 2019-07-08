@@ -1,0 +1,18 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+	<h:head>
+		<title>Agenda digital</title>
+	</h:head>
+	<h:body>
+		<h:outputLabel value="Editar cidade" />
+		<h:form>
+			<h:outputLabel value="Id: " />
+			<h:inputText value="#{cidadeUpdate.cidade.codigo}" />
+			<h:outputLabel value="Nome: " />
+			<h:inputText value="#{cidadeUpdate.cidade.nome}" />
+			<h:commandButton value="Enviar" action="#{cidadeUpdate.update}"/>			
+			<h:link value="Voltar" outcome="read.xhtml" />
+		</h:form>
+	</h:body>
+</html>

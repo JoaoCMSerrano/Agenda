@@ -8,9 +8,9 @@
    		<h:outputLabel value="Criar cidade" />
     	<h:form>
 			<h:outputLabel for="nome" value="Nome: " />
-			<h:inputText id="nome" value="#{cidadeJSF.nome}" />
-			<h:commandButton value="Enviar" action="#{cidadeJSF.createCidade}"/>
-			<h:outputLabel value=" #{cidadeJSF.nome}"/>
+			<h:inputText id="nome" value="#{cidadeCreat.cidade.nome}" />
+			<h:commandButton value="Enviar" action="#{cidadeCreat.createCidade}"/>
+			<h:commandButton value="Limpar" action="#{cidadeCreat.cleanCidade}"/>
 		</h:form>
     </h:body>
 </html>

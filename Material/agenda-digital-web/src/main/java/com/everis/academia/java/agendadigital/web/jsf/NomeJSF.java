@@ -15,7 +15,4 @@ public class NomeJSF {
 		this.nome = nome;
 	}
 	
-	public String digaOi() {
-		return null;
-	}
 }
