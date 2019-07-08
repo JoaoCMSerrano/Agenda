@@ -1,6 +1,9 @@
 package com.everis.academia.java.agendadigital.web.jsf;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
+
 import com.everis.academia.java.agendadigital.business.ICidadeBusiness;
 import com.everis.academia.java.agendadigital.business.impl.CidadeBusiness;
 import com.everis.academia.java.agendadigital.model.Cidade;
@@ -21,8 +24,16 @@ public class CidadeDelete {
 	}
 
 	public String delete(){	
-		business.delete(cidade.getCodigo());
-		return "delete";
+		
+		try {
+			business.delete(cidade.getCodigo());
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, cidade.getNome(), ": modificado com sucesso!"));
+			return "delete";
+		} catch (Exception e) {
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro ao eliminar!", e.getMessage()));
+		}
+		
+		return null;
 	}
 
 }

@@ -1,6 +1,8 @@
 package com.everis.academia.java.agendadigital.web.jsf;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
 
 import com.everis.academia.java.agendadigital.business.BusinessException;
 import com.everis.academia.java.agendadigital.business.ICidadeBusiness;
@@ -31,9 +33,16 @@ public class CidadeUpdate {
 	
 	public String update() throws BusinessException {
 	
-		business.update(cidade);
-
-		return "read";
+		
+		try {
+			business.update(cidade);
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, cidade.getNome(), ": modificado com sucesso!"));
+			return "read";
+		} catch (BusinessException e) {
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro ao editar!", e.getMessage()));
+		}
+		
+		return null;
 	}
 
 }

@@ -8,10 +8,11 @@
 		<h:outputLabel value="Editar cidade" />
 		<h:form>
 			<h:outputLabel value="Id: " />
-			<h:inputText value="#{cidadeUpdate.cidade.codigo}" />
+			<h:inputText value="#{cidadeUpdate.cidade.codigo}" onfocus="this.blur();"/>
 			<h:outputLabel value="Nome: " />
 			<h:inputText value="#{cidadeUpdate.cidade.nome}" />
-			<h:commandButton value="Enviar" action="#{cidadeUpdate.update}"/>			
+			<h:commandButton value="Enviar" action="#{cidadeUpdate.update}"/>	
+			<h:messages globalOnly="true" showSummary="true" showDetail="true" errorStyle="color:red;" />		
 			<h:link value="Voltar" outcome="read.xhtml" />
 		</h:form>
 	</h:body>

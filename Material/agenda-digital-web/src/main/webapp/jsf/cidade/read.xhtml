@@ -8,6 +8,7 @@
 	<h:body>
 		<h:outputLabel value="Lista de cidades" />
 		<h:form>
+			<h:messages showSummary="true" showDetail="true" infoStyle="color:blue;" errorStyle="color:red;" />
 			<h:link value="Adicionar nova cidade" outcome="create.xhtml" />
 			<h:dataTable value="#{cidadeRead.cidades}" var="cidade" border="1">
 				<h:column>
@@ -26,7 +27,7 @@
 					<f:facet name="header">
 						<h:outputLabel value="Acções" />
 					</f:facet>
-					<h:commandLink action="#{cidadeUpdate.edit(cidade)}" value="Editar" />
+					<h:commandLink action="#{cidadeUpdate.edit(cidade)}" value="Editar" style="margin-right: 5px" />
 
 					<h:commandLink action="#{cidadeDelete.delete}" value="Excluir">
 						<f:setPropertyActionListener target="#{cidadeDelete.cidade}" value="#{cidade}" />
