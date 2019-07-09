@@ -1,5 +1,7 @@
 package com.everis.academia.java.agendadigital.model;
 
+import com.everis.academia.java.agendadigital.model.TipoServico;
+
 public class ServicoPrestado {
 	
 	private Integer codigo;
@@ -40,12 +42,10 @@ public class ServicoPrestado {
 	}
 	
 
-
 	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 	
-
 
 	@Override
 	public String toString() {

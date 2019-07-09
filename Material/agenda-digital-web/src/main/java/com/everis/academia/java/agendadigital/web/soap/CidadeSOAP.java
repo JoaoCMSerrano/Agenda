@@ -5,6 +5,8 @@ import com.everis.academia.java.agendadigital.business.ICidadeBusiness;
 import com.everis.academia.java.agendadigital.business.impl.CidadeBusiness;
 import com.everis.academia.java.agendadigital.model.Cidade;
 
+import java.util.Collection;
+
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebParam.Mode;
@@ -24,5 +26,22 @@ public class CidadeSOAP {
 
 		business.create(cidade.getNome());
 		return cidade;
+	}
+	
+	@WebMethod(operationName = "read")
+	public Collection<Cidade> read(){
+		return business.read();
+	}
+	
+	@WebMethod(operationName = "update")
+	@WebResult(name = "cidade")
+	public Cidade update(@WebParam(name = "cidade") Cidade cidade) throws BusinessException {
+		business.update(cidade);
+		return cidade;
+	}
+	
+	@WebMethod(operationName = "delete")
+	public void delete(@WebParam(name = "cidade") Cidade cidade) {
+		business.delete(cidade.getCodigo());
 	}
 }
