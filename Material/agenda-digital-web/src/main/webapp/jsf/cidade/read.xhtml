@@ -1,39 +1,41 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 
 	<h:head>
 		<title>Agenda digital</title>
 	</h:head>
 	<h:body>
-		<h:outputLabel value="Lista de cidades" />
 		<h:form>
-			<h:messages showSummary="true" showDetail="true" infoStyle="color:blue;" errorStyle="color:red;" />
-			<h:link value="Adicionar nova cidade" outcome="create.xhtml" />
-			<h:dataTable value="#{cidadeRead.cidades}" var="cidade" border="1">
-				<h:column>
-					<f:facet name="header">
-						<h:outputLabel value="Código" />
-					</f:facet>
-					<h:outputText value="#{cidade.codigo}" />
-				</h:column>
-				<h:column>
-					<f:facet name="header">
-						<h:outputLabel value="Nome" />
-					</f:facet>
-					<h:outputText value="#{cidade.nome}" />
-				</h:column>
-				<h:column>
-					<f:facet name="header">
-						<h:outputLabel value="Acções" />
-					</f:facet>
-					<h:commandLink action="#{cidadeUpdate.edit(cidade)}" value="Editar" style="margin-right: 5px" />
-
-					<h:commandLink action="#{cidadeDelete.delete}" value="Excluir">
-						<f:setPropertyActionListener target="#{cidadeDelete.cidade}" value="#{cidade}" />
-					</h:commandLink>
-				</h:column>
-			</h:dataTable>
+			<p:panel header="Lista de cidades">
+				<p:messages showSummary="true" showDetail="true" infoStyle="color:blue;" errorStyle="color:red;" />
+				<h:link value="Adicionar nova cidade" outcome="create.xhtml" />
+				<p:dataTable value="#{cidadeRead.cidades}" var="cidade" border="1">
+					<p:column>
+						<f:facet name="header">
+							<p:outputLabel value="Código" />
+						</f:facet>
+						<h:outputText value="#{cidade.codigo}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">
+							<p:outputLabel value="Nome" />
+						</f:facet>
+						<h:outputText value="#{cidade.nome}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">
+							<p:outputLabel value="Acções" />
+						</f:facet>
+						<h:commandLink action="#{cidadeUpdate.edit(cidade)}" value="Editar" style="margin-right: 5px" />
+	
+						<h:commandLink action="#{cidadeDelete.delete}" value="Excluir">
+							<f:setPropertyActionListener target="#{cidadeDelete.cidade}" value="#{cidade}" />
+						</h:commandLink>
+					</p:column>
+				</p:dataTable>
+			</p:panel>
 		</h:form>
 	</h:body>
 </html>

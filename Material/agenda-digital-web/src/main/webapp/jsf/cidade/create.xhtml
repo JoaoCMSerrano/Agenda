@@ -1,18 +1,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
  
     <h:head>
         <title>Agenda digital</title>
     </h:head>
     <h:body>
-   		<h:outputLabel value="Criar cidade" />
-    	<h:form prependID="false">
-			<h:outputLabel for="nome" value="Nome: " />
-			<h:inputText id="nome" value="#{cidadeCreat.cidade.nome}" />
-			<h:commandButton value="Enviar" action="#{cidadeCreat.createCidade}"/>
-			<h:commandButton value="Limpar" action="#{cidadeCreat.cleanCidade}"/>
-			<h:messages globalOnly="true" showSummary="true" showDetail="true" errorStyle="color:red;" />
+	    <h:form prependID="false">
+   			<p:panel header="Criar cidade">
+				<p:outputLabel for="nome" value="Nome: " />
+				<p:inputText id="nome" value="#{cidadeCreat.cidade.nome}" />
+				<p:commandButton value="Enviar" action="#{cidadeCreat.createCidade}" update="@form" />
+				<p:commandButton value="Limpar" action="#{cidadeCreat.cleanCidade}" update="@form"/>
+				<p:commandButton value="Voltar" action="read?faces-redirect=true" />
+			</p:panel>
+			<p:messages showSummary="true" showDetail="true" />
 		</h:form>
-		<h:link value="Voltar" outcome="read.xhtml" />
     </h:body>
 </html>

@@ -40,9 +40,24 @@
 			<groupId>com.sun.xml.ws</groupId>
 			<artifactId>jaxws-rt</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.primefaces.themes</groupId>
+			<artifactId>cupertino</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
 		<finalName>agenda-digital-web</finalName>
 	</build>
+	
+	<repositories>
+		<repository>
+			<id>primefaces-themes</id>
+			<url>https://repository.primefaces.org/</url>
+		</repository>
+	</repositories>
 </project>
