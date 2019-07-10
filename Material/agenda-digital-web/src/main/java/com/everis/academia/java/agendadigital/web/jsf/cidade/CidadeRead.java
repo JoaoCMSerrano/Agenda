@@ -1,4 +1,4 @@
-package com.everis.academia.java.agendadigital.web.jsf;
+package com.everis.academia.java.agendadigital.web.jsf.cidade;
 
 import java.util.Collection;
 
