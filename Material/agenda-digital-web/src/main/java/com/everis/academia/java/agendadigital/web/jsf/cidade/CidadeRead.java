@@ -5,14 +5,18 @@ import java.util.Collection;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.everis.academia.java.agendadigital.business.ICidadeBusiness;
-import com.everis.academia.java.agendadigital.business.impl.CidadeBusiness;
 import com.everis.academia.java.agendadigital.model.Cidade;
 
+@Component
 @ManagedBean(name = "cidadeRead")
 public class CidadeRead {
-
-	private ICidadeBusiness business = new CidadeBusiness();
+	
+	@Autowired
+	private ICidadeBusiness business;
 	
 	private Collection<Cidade> cidades = null;
 	

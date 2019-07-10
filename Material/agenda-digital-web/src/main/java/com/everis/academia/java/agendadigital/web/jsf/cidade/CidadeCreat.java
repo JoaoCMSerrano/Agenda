@@ -4,16 +4,21 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.everis.academia.java.agendadigital.business.BusinessException;
 import com.everis.academia.java.agendadigital.business.ICidadeBusiness;
-import com.everis.academia.java.agendadigital.business.impl.CidadeBusiness;
 import com.everis.academia.java.agendadigital.model.Cidade;
 
+@Component
 @ManagedBean(name = "cidadeCreat")
 public class CidadeCreat {
 
+	@Autowired
+	private ICidadeBusiness business;
+	
 	private Cidade cidade = new Cidade();
-	private ICidadeBusiness business = new CidadeBusiness();
 
 	public Cidade getCidade() {
 
