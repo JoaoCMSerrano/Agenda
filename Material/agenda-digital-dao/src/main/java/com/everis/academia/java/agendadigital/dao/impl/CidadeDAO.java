@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import com.everis.academia.java.agendadigital.dao.ICidadeDAO;
 import com.everis.academia.java.agendadigital.model.Cidade;
+
 @Repository
 public class CidadeDAO implements ICidadeDAO{
 

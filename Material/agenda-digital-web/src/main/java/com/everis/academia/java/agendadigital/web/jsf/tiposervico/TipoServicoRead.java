@@ -4,13 +4,20 @@ import java.util.Collection;
 
 import javax.faces.bean.ManagedBean;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.RequestScope;
+
 import com.everis.academia.java.agendadigital.business.ITipoServicoBusiness;
-import com.everis.academia.java.agendadigital.business.impl.TipoServicoBusiness;
 import com.everis.academia.java.agendadigital.model.TipoServico;
 
+@Component("tipoServicoRead")
 @ManagedBean(name = "tipoServicoRead")
+@RequestScope
 public class TipoServicoRead {
-	private ITipoServicoBusiness business = new TipoServicoBusiness();
+	
+	@Autowired
+	private ITipoServicoBusiness business;
 	
 	private Collection<TipoServico> tiposServico = null;
 	

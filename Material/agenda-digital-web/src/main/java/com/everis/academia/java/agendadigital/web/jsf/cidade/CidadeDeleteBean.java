@@ -18,7 +18,7 @@ public class CidadeDeleteBean {
 	
 	@Autowired
 	private ICidadeBusiness business;
-	private Cidade cidade;
+	private Cidade cidade = new Cidade();
 
 	public Cidade getCidade() {
 		return cidade;

@@ -4,15 +4,21 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.RequestScope;
+
 import com.everis.academia.java.agendadigital.business.BusinessException;
 import com.everis.academia.java.agendadigital.business.ITipoServicoBusiness;
-import com.everis.academia.java.agendadigital.business.impl.TipoServicoBusiness;
 import com.everis.academia.java.agendadigital.model.TipoServico;
 
+@Component("tipoServicoUpdate")
 @ManagedBean(name = "tipoServicoUpdate")
+@RequestScope
 public class TipoServicoUpdate {
 	
-	private ITipoServicoBusiness business = new TipoServicoBusiness();
+	@Autowired
+	private ITipoServicoBusiness business;
 	private TipoServico tipoServico = new TipoServico();
 	
 	public TipoServico getTipoServico() {

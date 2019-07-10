@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.everis.academia.java.agendadigital.dao.ITipoServicoDAO;
 import com.everis.academia.java.agendadigital.model.TipoServico;
 
+@Repository
 public class TipoServicoDAO implements ITipoServicoDAO{
 
 	public static List<TipoServico> tiposServico = new ArrayList<TipoServico>();
@@ -17,11 +20,10 @@ public class TipoServicoDAO implements ITipoServicoDAO{
 	public void create(String descricao) {
 
 		// Incrementa o id e coloca no registo do tipoServico
-				id++;
-				
-				// Adiciona o tipoServico
-				tiposServico.add(new TipoServico(id,descricao));
+		id++;
 		
+		// Adiciona o tipoServico
+		tiposServico.add(new TipoServico(id,descricao));
 	}
 
 	@Override
@@ -32,7 +34,6 @@ public class TipoServicoDAO implements ITipoServicoDAO{
 	@Override
 	public void update(TipoServico tipoServico) {
 		tiposServico.set(tiposServico.indexOf(tipoServico), tipoServico);
-		
 	}
 
 	@Override
