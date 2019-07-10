@@ -37,4 +37,8 @@
 		<servlet-name>JAXWSServlet</servlet-name>
 		<url-pattern>/soap</url-pattern>
 	</servlet-mapping>
+	
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
 </web-app>

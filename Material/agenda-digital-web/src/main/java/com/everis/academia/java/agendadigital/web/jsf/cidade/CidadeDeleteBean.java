@@ -6,18 +6,19 @@ import javax.faces.context.FacesContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.RequestScope;
 
 import com.everis.academia.java.agendadigital.business.ICidadeBusiness;
 import com.everis.academia.java.agendadigital.model.Cidade;
 
-@Component
+@Component("cidadeDelete")
 @ManagedBean(name = "cidadeDelete")
-public class CidadeDelete {
+@RequestScope
+public class CidadeDeleteBean {
 	
 	@Autowired
 	private ICidadeBusiness business;
-
-	private Cidade cidade = new Cidade();
+	private Cidade cidade;
 
 	public Cidade getCidade() {
 		return cidade;

@@ -6,14 +6,16 @@ import javax.faces.context.FacesContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.RequestScope;
 
 import com.everis.academia.java.agendadigital.business.BusinessException;
 import com.everis.academia.java.agendadigital.business.ICidadeBusiness;
 import com.everis.academia.java.agendadigital.model.Cidade;
 
-@Component
+@Component("cidadeUpdate")
 @ManagedBean(name = "cidadeUpdate")
-public class CidadeUpdate {
+@RequestScope
+public class CidadeUpdateBean {
 	
 	@Autowired
 	private ICidadeBusiness business;

@@ -10,11 +10,21 @@
 	<artifactId>agenda-digital-dao</artifactId>
 	<name>agenda-digital-dao</name>
 	<description>Projecto responsavel por respresentar a camada da persistencia de dados</description>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>com.everis.academia.java</groupId>
 			<artifactId>agenda-digital-model</artifactId>
+		</dependency>
+		
+		<!-- dependencia do spring -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
 		</dependency>
 	</dependencies>
 </project>

@@ -10,7 +10,7 @@
 		<h:form>
 			<p:panel header="Lista de cidades">
 				<p:messages showSummary="true" showDetail="true" infoStyle="color:blue;" errorStyle="color:red;" />
-				<h:link value="Adicionar nova cidade" outcome="create.xhtml" />
+				<p:link value="Adicionar nova cidade" outcome="create.xhtml" />
 				<p:dataTable value="#{cidadeRead.cidades}" var="cidade" border="1">
 					<p:column>
 						<f:facet name="header">

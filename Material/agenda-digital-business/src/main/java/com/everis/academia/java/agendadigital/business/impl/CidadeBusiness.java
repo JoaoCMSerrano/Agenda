@@ -2,17 +2,20 @@ package com.everis.academia.java.agendadigital.business.impl;
 
 import java.util.Collection;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.everis.academia.java.agendadigital.business.BusinessException;
 import com.everis.academia.java.agendadigital.business.ICidadeBusiness;
 import com.everis.academia.java.agendadigital.dao.ICidadeDAO;
-import com.everis.academia.java.agendadigital.dao.impl.CidadeDAOList;
-//import com.everis.academia.java.agendadigital.dao.impl.CidadeDAOSet;
+import com.everis.academia.java.agendadigital.dao.impl.CidadeDAO;
 import com.everis.academia.java.agendadigital.model.Cidade;
 
+@Service
 public class CidadeBusiness implements ICidadeBusiness {
 
-	private ICidadeDAO dao = new CidadeDAOList();
-//	private ICidadeDAO dao = new CidadeDAOSet();
+	@Autowired
+	private ICidadeDAO dao;
 	
 	@Override
 	public void create(String nome) throws BusinessException {
@@ -43,8 +46,7 @@ public class CidadeBusiness implements ICidadeBusiness {
 		}
 
 		// Validar se o nome já se encontra na lista e se, caso se encontre, não se trate do mesmo
-		for(Cidade c : CidadeDAOList.cidades) {
-//		for(Cidade c : CidadeDAOSet.cidades) {
+		for(Cidade c : CidadeDAO.cidades) {
 			if(c.getNome().trim().equalsIgnoreCase(cidade.getNome()) && !(c.getCodigo()==cidade.getCodigo())) {
 				throw new BusinessException("Esse nome de cidade já existe.");
 			}

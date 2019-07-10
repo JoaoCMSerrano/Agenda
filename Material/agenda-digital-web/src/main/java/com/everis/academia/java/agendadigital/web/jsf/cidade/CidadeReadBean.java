@@ -7,18 +7,19 @@ import javax.faces.bean.ManagedBean;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.RequestScope;
 
 import com.everis.academia.java.agendadigital.business.ICidadeBusiness;
 import com.everis.academia.java.agendadigital.model.Cidade;
 
-@Component
+@Component("cidadeRead")
 @ManagedBean(name = "cidadeRead")
-public class CidadeRead {
+@RequestScope
+public class CidadeReadBean {
 	
 	@Autowired
 	private ICidadeBusiness business;
-	
-	private Collection<Cidade> cidades = null;
+	private Collection<Cidade> cidades;
 	
 	//Boa prática: não inicializar o objecto na declaração ou no construtor
 	@PostConstruct
