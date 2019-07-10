@@ -3,14 +3,13 @@ package com.everis.academia.java.agendadigital.dao.impl;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Set;
+
+import org.springframework.stereotype.Repository;
 
 import com.everis.academia.java.agendadigital.dao.IPrestadorServicoDAO;
-import com.everis.academia.java.agendadigital.enums.TipoLogradouro;
-import com.everis.academia.java.agendadigital.model.Cidade;
 import com.everis.academia.java.agendadigital.model.PrestadorServico;
-import com.everis.academia.java.agendadigital.model.TipoServico;
 
+@Repository
 public class PrestadorServicoDAO implements IPrestadorServicoDAO {
 
 	public static List<PrestadorServico> prestadoresServico = new ArrayList<PrestadorServico>();
@@ -18,16 +17,13 @@ public class PrestadorServicoDAO implements IPrestadorServicoDAO {
 	private static Integer id = 0;
 	
 	@Override
-	public void create(String nome, Cidade cidade, String bairro, String cep, TipoLogradouro tipoLogradouro,
-			String logradouro, String complemento, String numero, String email, Set<TipoServico> servicosCredenciados
-			/*, Set<Telefone> telefones, Set<PrestacaoServico> prestacoesServicos*/) {
+	public void create(PrestadorServico prestadorServico) {
 		
+		// Incrementa o id e coloca no registo do prestadorServico
 		id++;
-	
-		PrestadorServico prestadorServico = new PrestadorServico();
-		
 		prestadorServico.setCodigo(id);
-		prestadorServico.setNome(nome);
+		
+/*		prestadorServico.setNome(nome);
 		prestadorServico.setBairro(bairro);
 		prestadorServico.setCep(cep);
 		prestadorServico.setTipoLogradouro(tipoLogradouro);
@@ -38,6 +34,8 @@ public class PrestadorServicoDAO implements IPrestadorServicoDAO {
 		prestadorServico.setServicosCredenciados(servicosCredenciados);
 //		prestadorServico.setTelefones(telefones);
 //		prestadorServico.setPrestacoesServicos(prestacoesServicos);
+ */
+		// Adiciona o prestadorServico
 		prestadoresServico.add(prestadorServico);
 	}
 
