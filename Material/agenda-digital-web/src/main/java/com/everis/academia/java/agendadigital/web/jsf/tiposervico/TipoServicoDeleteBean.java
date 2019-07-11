@@ -18,7 +18,6 @@ public class TipoServicoDeleteBean {
 	
 	@Autowired
 	private ITipoServicoBusiness business;
-	
 	private TipoServico tipoServico = new TipoServico();
 
 	public TipoServico getTipoServico() {

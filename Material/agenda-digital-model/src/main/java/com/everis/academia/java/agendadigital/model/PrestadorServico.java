@@ -2,22 +2,61 @@ package com.everis.academia.java.agendadigital.model;
 
 import java.util.Set;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
 import com.everis.academia.java.agendadigital.enums.TipoLogradouro;
 
+@Entity
+@Table(name = "TB_PRESTADORSERVICO", schema = "public")
+@SequenceGenerator(name = "SQ_PRESTADORSERVICO", sequenceName = "SQ_PRESTADORSERVICO", initialValue = 1, allocationSize = 1)
 public class PrestadorServico {
 
+	@Id
+	@GeneratedValue(generator = "SQ_PRESTADORSERVICO", strategy = GenerationType.SEQUENCE)
+	@Column(name = "COD_PS", unique = true, nullable = false)
 	private Integer codigo;
+	
+	@Column(name = "NOME_PS", unique = true, nullable = false, length = 50)
 	private String nome;
+	
+	@Transient
 	private Cidade cidade;
+	
+	@Column(name = "BAIRRO_PS", unique = true, nullable = false, length = 30)
 	private String bairro;
+	
+	@Column(name = "CEP_PS", unique = true, nullable = false)
 	private String cep;
+	
+	@Transient
 	private TipoLogradouro tipoLogradouro;
+	
+	@Column(name = "LOGRADOURO_PS", unique = true, nullable = false)
 	private String logradouro;
+	
+	@Column(name = "COMPLEMENTO_PS", unique = true, nullable = false, length = 50)
 	private String complemento;
+	
+	@Column(name = "NUMERO_PS", unique = true, nullable = false)
 	private String numero;
+	
+	@Column(name = "EMAIL_PS", unique = true, nullable = false)
 	private String email;
+	
+	@Transient
 	private Set<Telefone> telefones;
+	
+	@Transient
 	private Set<TipoServico> servicosCredenciados;
+	
+	@Transient
 	private Set<PrestacaoServico> prestacoesServicos;
 	
 	public PrestadorServico() {

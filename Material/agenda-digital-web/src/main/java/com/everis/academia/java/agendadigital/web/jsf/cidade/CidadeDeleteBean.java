@@ -29,7 +29,6 @@ public class CidadeDeleteBean {
 	}
 
 	public String delete(){	
-		
 		try {
 			business.delete(cidade.getCodigo());
 			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, cidade.getNome(), ": eliminado com sucesso!"));

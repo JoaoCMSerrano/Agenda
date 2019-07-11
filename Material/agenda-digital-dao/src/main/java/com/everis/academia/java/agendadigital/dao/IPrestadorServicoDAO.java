@@ -13,6 +13,4 @@ public interface IPrestadorServicoDAO {
 	void update(PrestadorServico prestadorServico);
 	
 	void delete(PrestadorServico prestadorServico);
-	
-	Boolean jaExistePrestadorServico(String nome);
 }

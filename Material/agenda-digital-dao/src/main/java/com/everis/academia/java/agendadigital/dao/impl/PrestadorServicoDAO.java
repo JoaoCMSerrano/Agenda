@@ -4,12 +4,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
-
 import com.everis.academia.java.agendadigital.dao.IPrestadorServicoDAO;
 import com.everis.academia.java.agendadigital.model.PrestadorServico;
 
-@Repository
+//@Repository
 public class PrestadorServicoDAO implements IPrestadorServicoDAO {
 
 	public static List<PrestadorServico> prestadoresServico = new ArrayList<PrestadorServico>();
@@ -42,20 +40,6 @@ public class PrestadorServicoDAO implements IPrestadorServicoDAO {
 	public void delete(PrestadorServico prestadorServico) {
 		prestadoresServico.remove(prestadorServico);
 		
-	}
-
-	@Override
-	public Boolean jaExistePrestadorServico(String nome) {
-		
-		//TODO Ver como ei de comparar os prestadores de servico pois o nome não deve ser suficiente
-		
-		for(PrestadorServico prestadorServico : prestadoresServico) {
-			if(prestadorServico.getNome().trim().equalsIgnoreCase(nome)) {
-				return Boolean.TRUE;
-			}		
-		}
-		
-		return Boolean.FALSE;
 	}
 
 }
