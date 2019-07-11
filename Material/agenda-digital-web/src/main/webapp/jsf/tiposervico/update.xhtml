@@ -7,11 +7,11 @@
 	</h:head>
 	<h:body>
 		<h:form>
-			<p:panel header="Editar cidade">
+			<p:panel header="Editar Tipo de Serviço">
 				<p:outputLabel value="Id: " />
 				<p:inputText value="#{tipoServicoUpdate.tipoServico.codigo}" onfocus="this.blur();" />
-				<p:outputLabel value="Nome: " />
-				<p:inputText value="#{tipoServicoUpdate.tipoServico.nome}" />
+				<p:outputLabel value="Descrição: " />
+				<p:inputText value="#{tipoServicoUpdate.tipoServico.descricao}" />
 				<p:commandButton value="Enviar" action="#{tipoServicoUpdate.update}" update="@form" />
 				<p:commandButton value="Voltar" action="read?faces-redirect=true" update="@form" />
 			</p:panel>

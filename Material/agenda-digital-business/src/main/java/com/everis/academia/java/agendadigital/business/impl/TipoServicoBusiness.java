@@ -18,8 +18,10 @@ public class TipoServicoBusiness implements ITipoServicoBusiness {
 	private ITipoServicoDAO dao;
 	
 	@Override
-	public void create(String descricao) throws BusinessException {
+	public void create(TipoServico tipoServico) throws BusinessException {
 
+		String descricao = tipoServico.getDescricao();
+		
 		// Validar se o nome é vazio (regra de negócio)
 		if (descricao == null || descricao.trim().isEmpty()) {
 			throw new BusinessException("Descrição obrigatória");
@@ -30,7 +32,7 @@ public class TipoServicoBusiness implements ITipoServicoBusiness {
 			throw new BusinessException("Esse tipo de serviço já existe");
 		}
 
-		dao.create(descricao);
+		dao.create(tipoServico);
 		
 	}
 
@@ -41,14 +43,17 @@ public class TipoServicoBusiness implements ITipoServicoBusiness {
 
 	@Override
 	public void update(TipoServico tipoServico) throws BusinessException {
+
+		String descricao = tipoServico.getDescricao();
+		
 		// Validar se o nome é vazio
-		if (tipoServico.getDescricao() == null || tipoServico.getDescricao().trim().isEmpty()) {
+		if (descricao == null || descricao.trim().isEmpty()) {
 			throw new BusinessException("Descrição obrigatória.");
 		}
 
 		// Validar se o nome já se encontra na lista e se, caso se encontre, não se trate do mesmo
 		for(TipoServico ts : TipoServicoDAO.tiposServico) {
-			if(ts.getDescricao().trim().equalsIgnoreCase(tipoServico.getDescricao()) && !(ts.getCodigo()==tipoServico.getCodigo())) {
+			if(ts.getDescricao().trim().equalsIgnoreCase(descricao) && !(ts.getCodigo()==tipoServico.getCodigo())) {
 				throw new BusinessException("Esse tipo de serviço já existe.");
 			}
 		}

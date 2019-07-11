@@ -5,7 +5,7 @@ import java.util.Collection;
 import com.everis.academia.java.agendadigital.model.TipoServico;
 
 public interface ITipoServicoBusiness {
-	void create(String descricao) throws BusinessException;
+	void create(TipoServico tipoServico) throws BusinessException;
 
 	Collection<TipoServico> read();
 

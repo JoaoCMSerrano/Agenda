@@ -6,7 +6,7 @@ import com.everis.academia.java.agendadigital.model.TipoServico;
 
 public interface ITipoServicoDAO {
 	
-	void create(String descricao);
+	void create(TipoServico tipoServico);
 	
 	Collection<TipoServico> read();
 	

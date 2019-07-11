@@ -1,0 +1,26 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+ 
+    <h:head>
+        <title>Agenda digital</title>
+    </h:head>
+    <h:body>
+	    <h:form prependID="false">
+   			<p:panel header="Criar Prestador de Servico">
+				<p:panelGrid>
+					<p:outputLabel for="nome" value="Nome: " />
+					<p:inputText id="nome" value="#{prestadorServicoCreate.prestadorServico.nome}" />
+				</p:panelGrid>
+				<p:panelGrid>
+					<p:outputLabel for="bairro" value="Bairro: " />
+					<p:inputText id="bairro" value="#{prestadorServicoCreate.prestadorServico.bairro}" />
+				</p:panelGrid>
+				<p:commandButton value="Enviar" action="#{prestadorServicoCreate.createPrestadorServico}" update="@form" />
+				<p:commandButton value="Limpar" action="#{prestadorServicoCreate.cleanPrestadorServico}" update="@form"/>
+				<p:commandButton value="Voltar" action="read?faces-redirect=true" />
+			</p:panel>
+			<p:messages showSummary="true" showDetail="true" />
+		</h:form>
+    </h:body>
+</html>

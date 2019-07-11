@@ -2,6 +2,7 @@ package com.everis.academia.java.agendadigital.web.jsf.tiposervico;
 
 import java.util.Collection;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,13 +15,13 @@ import com.everis.academia.java.agendadigital.model.TipoServico;
 @Component("tipoServicoRead")
 @ManagedBean(name = "tipoServicoRead")
 @RequestScope
-public class TipoServicoRead {
+public class TipoServicoReadBean {
 	
 	@Autowired
 	private ITipoServicoBusiness business;
+	private Collection<TipoServico> tiposServico;
 	
-	private Collection<TipoServico> tiposServico = null;
-	
+	@PostConstruct
 	public void init() {
 		this.tiposServico = business.read();
 	}

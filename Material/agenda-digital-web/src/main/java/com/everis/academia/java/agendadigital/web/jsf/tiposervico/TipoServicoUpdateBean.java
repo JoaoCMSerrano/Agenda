@@ -8,35 +8,46 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.RequestScope;
 
+import com.everis.academia.java.agendadigital.business.BusinessException;
 import com.everis.academia.java.agendadigital.business.ITipoServicoBusiness;
 import com.everis.academia.java.agendadigital.model.TipoServico;
 
-@Component("tipoServicoDelete")
-@ManagedBean(name = "tipoServicoDelete")
+@Component("tipoServicoUpdate")
+@ManagedBean(name = "tipoServicoUpdate")
 @RequestScope
-public class TipoServicoDelete {
+public class TipoServicoUpdateBean {
 	
 	@Autowired
 	private ITipoServicoBusiness business;
-	
 	private TipoServico tipoServico = new TipoServico();
-
+	
 	public TipoServico getTipoServico() {
+		
 		return tipoServico;
 	}
-
+	
 	public void setTipoServico(TipoServico tipoServico) {
+
 		this.tipoServico = tipoServico;
 	}
 	
-	public String delete() {
-		try {
-			business.delete(tipoServico);
-			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, tipoServico.getDescricao(), ": eliminado com sucesso!"));
-			return "delete";
-		} catch (Exception e) {
-			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro ao eliminar!", e.getMessage()));
-		}
-		return null;
+public String edit(TipoServico tipoServico){
+		
+		this.tipoServico = tipoServico;
+		
+		return "update";
 	}
+public String update() throws BusinessException {
+	
+	
+	try {
+		business.update(tipoServico);
+		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, tipoServico.getDescricao(), ": modificado com sucesso!"));
+		return "read";
+	} catch (BusinessException e) {
+		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro ao editar!", e.getMessage()));
+	}
+	
+	return null;
+}
 }

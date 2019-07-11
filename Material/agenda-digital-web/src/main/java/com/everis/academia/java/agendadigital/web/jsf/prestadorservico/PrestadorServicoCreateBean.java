@@ -1,7 +1,6 @@
 package com.everis.academia.java.agendadigital.web.jsf.prestadorservico;
 
 import com.everis.academia.java.agendadigital.model.PrestadorServico;
-import com.everis.academia.java.agendadigital.model.TipoServico;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -13,7 +12,6 @@ import org.springframework.web.context.annotation.RequestScope;
 
 import com.everis.academia.java.agendadigital.business.BusinessException;
 import com.everis.academia.java.agendadigital.business.IPrestadorServicoBusiness;
-import com.everis.academia.java.agendadigital.business.ITipoServicoBusiness;
 
 @Component("prestadorServicoCreate")
 @ManagedBean(name = "prestadorServicoCreate")
@@ -35,7 +33,7 @@ public class PrestadorServicoCreateBean {
 		this.prestadorServico = prestadorServico;
 	}
 	
-	public String createTipoServico() {
+	public String createPrestadorServico() {
 		try {
 			business.create(prestadorServico);
 			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, prestadorServico.getNome(), ": registado com sucesso!"));

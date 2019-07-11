@@ -1,0 +1,47 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+		<title>Agenda digital</title>
+	</h:head>
+	<h:body>
+		<h:form>
+			<p:panel header="Lista de prestadores de servico">
+				<p:messages showSummary="true" showDetail="true" />
+				<p:link value="Adicionar prestador" outcome="create.xhtml" />
+				<p:dataTable value="#{prestadorServicoRead.prestadoresServico}" var="prestadorServico" border="1">
+					<p:column>
+						<f:facet name="header">
+							<p:outputLabel value="Codigo" />
+						</f:facet>
+						<h:outputText value="#{prestadorServico.codigo}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">
+							<p:outputLabel value="Nome" />
+						</f:facet>
+						<h:outputText value="#{prestadorServico.nome}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">
+							<p:outputLabel value="Bairro" />
+						</f:facet>
+						<h:outputText value="#{prestadorServico.bairro}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">
+							<p:outputLabel value="Accoes" />
+						</f:facet>
+						<h:commandLink action="#{prestadorServicoUpdate.edit(prestadorServico)}" value="Editar" style="margin-right: 5px" />
+	
+						<h:commandLink action="#{prestadorServicoDelete.delete}" value="Excluir">
+							<f:setPropertyActionListener target="#{prestadorServicoDelete.prestadorServico}" value="#{prestadorServico}" />
+						</h:commandLink>
+					</p:column>
+				</p:dataTable>
+			</p:panel>
+		</h:form>
+	</h:body>
+</html>

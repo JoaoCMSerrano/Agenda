@@ -23,18 +23,6 @@ public class PrestadorServicoDAO implements IPrestadorServicoDAO {
 		id++;
 		prestadorServico.setCodigo(id);
 		
-/*		prestadorServico.setNome(nome);
-		prestadorServico.setBairro(bairro);
-		prestadorServico.setCep(cep);
-		prestadorServico.setTipoLogradouro(tipoLogradouro);
-		prestadorServico.setLogradouro(logradouro);
-		prestadorServico.setComplemento(complemento);
-		prestadorServico.setNumero(numero);
-		prestadorServico.setEmail(email);
-		prestadorServico.setServicosCredenciados(servicosCredenciados);
-//		prestadorServico.setTelefones(telefones);
-//		prestadorServico.setPrestacoesServicos(prestacoesServicos);
- */
 		// Adiciona o prestadorServico
 		prestadoresServico.add(prestadorServico);
 	}

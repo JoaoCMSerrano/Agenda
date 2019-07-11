@@ -17,13 +17,13 @@ public class TipoServicoDAO implements ITipoServicoDAO{
 	private static Short id = 0;
 	
 	@Override
-	public void create(String descricao) {
+	public void create(TipoServico tipoServico) {
 
 		// Incrementa o id e coloca no registo do tipoServico
 		id++;
-		
+		tipoServico.setCodigo(id);
 		// Adiciona o tipoServico
-		tiposServico.add(new TipoServico(id,descricao));
+		tiposServico.add(tipoServico);
 	}
 
 	@Override

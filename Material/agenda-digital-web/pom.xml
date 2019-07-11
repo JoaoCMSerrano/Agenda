@@ -47,7 +47,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.primefaces.themes</groupId>
-			<artifactId>cupertino</artifactId>
+			<artifactId>delta</artifactId>
 		</dependency>
 		
 		<!-- dependencia do spring -->

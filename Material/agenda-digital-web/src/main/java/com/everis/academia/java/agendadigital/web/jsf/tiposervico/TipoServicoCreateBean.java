@@ -1,5 +1,7 @@
 package com.everis.academia.java.agendadigital.web.jsf.tiposervico;
 
+import com.everis.academia.java.agendadigital.model.TipoServico;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
@@ -10,15 +12,15 @@ import org.springframework.web.context.annotation.RequestScope;
 
 import com.everis.academia.java.agendadigital.business.BusinessException;
 import com.everis.academia.java.agendadigital.business.ITipoServicoBusiness;
-import com.everis.academia.java.agendadigital.model.TipoServico;
 
-@Component("tipoServicoUpdate")
-@ManagedBean(name = "tipoServicoUpdate")
+@Component("tipoServicoCreate")
+@ManagedBean(name = "tipoServicoCreate")
 @RequestScope
-public class TipoServicoUpdate {
-	
+public class TipoServicoCreateBean {
+
 	@Autowired
 	private ITipoServicoBusiness business;
+	
 	private TipoServico tipoServico = new TipoServico();
 	
 	public TipoServico getTipoServico() {
@@ -31,23 +33,20 @@ public class TipoServicoUpdate {
 		this.tipoServico = tipoServico;
 	}
 	
-public String edit(TipoServico tipoServico){
-		
-		this.tipoServico = tipoServico;
-		
-		return "update";
-	}
-public String update() throws BusinessException {
-	
-	
-	try {
-		business.update(tipoServico);
-		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, tipoServico.getDescricao(), ": modificado com sucesso!"));
-		return "read";
-	} catch (BusinessException e) {
-		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro ao editar!", e.getMessage()));
+	public String createTipoServico() {
+		try {
+			business.create(tipoServico);
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, tipoServico.getDescricao(), ": registado com sucesso!"));
+			return "read";
+		} catch (BusinessException e) {
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro ao registar!", e.getMessage()));
+		}
+		return null;
 	}
 	
-	return null;
-}
+	public String cleanTipoServico() {
+		this.tipoServico = new TipoServico();
+		return null;
+	}
+	
 }
