@@ -16,6 +16,26 @@
 					<p:outputLabel for="bairro" value="Bairro: " />
 					<p:inputText id="bairro" value="#{prestadorServicoCreate.prestadorServico.bairro}" />
 				</p:panelGrid>
+				<p:panelGrid>
+					<p:outputLabel for="cep" value="CEP: " />
+					<p:inputText id="cep" value="#{prestadorServicoCreate.prestadorServico.cep}" />
+				</p:panelGrid>
+				<p:panelGrid>
+					<p:outputLabel for="logradouro" value="Logradouro: " />
+					<p:inputText id="logradouro" value="#{prestadorServicoCreate.prestadorServico.logradouro}" />
+				</p:panelGrid>
+				<p:panelGrid>
+					<p:outputLabel for="complemento" value="Complemento: " />
+					<p:inputText id="complemento" value="#{prestadorServicoCreate.prestadorServico.complemento}" />
+				</p:panelGrid>
+				<p:panelGrid>
+					<p:outputLabel for="numero" value="Numero: " />
+					<p:inputText id="numero" value="#{prestadorServicoCreate.prestadorServico.numero}" />
+				</p:panelGrid>
+				<p:panelGrid>
+					<p:outputLabel for="email" value="Email: " />
+					<p:inputText id="email" value="#{prestadorServicoCreate.prestadorServico.email}" />
+				</p:panelGrid>
 				<p:commandButton value="Enviar" action="#{prestadorServicoCreate.createPrestadorServico}" update="@form" />
 				<p:commandButton value="Limpar" action="#{prestadorServicoCreate.cleanPrestadorServico}" update="@form"/>
 				<p:commandButton value="Voltar" action="read?faces-redirect=true" />
