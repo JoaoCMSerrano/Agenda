@@ -14,7 +14,7 @@ public interface ITipoServicoDAO {
 	
 	void delete(TipoServico tipoServico);
 	
-	Boolean jaExisteTipoServico(String descricao);
+	Boolean jaExisteTipoServico(TipoServico tipoServico);
 	
 }
 

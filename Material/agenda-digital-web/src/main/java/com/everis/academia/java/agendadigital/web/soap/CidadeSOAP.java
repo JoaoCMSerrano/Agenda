@@ -24,7 +24,7 @@ public class CidadeSOAP {
 			@WebParam(name = "cidade", mode = Mode.IN) Cidade cidade)
 			throws BusinessException {
 
-		business.create(cidade.getNome());
+		business.create(cidade);
 		return cidade;
 	}
 	

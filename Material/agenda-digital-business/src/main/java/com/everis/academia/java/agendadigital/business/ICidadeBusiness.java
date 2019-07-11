@@ -5,7 +5,7 @@ import com.everis.academia.java.agendadigital.model.Cidade;
 
 public interface ICidadeBusiness {
 
-	void create(String nome) throws BusinessException;
+	void create(Cidade cidade) throws BusinessException;
 
 	Collection<Cidade> read();
 

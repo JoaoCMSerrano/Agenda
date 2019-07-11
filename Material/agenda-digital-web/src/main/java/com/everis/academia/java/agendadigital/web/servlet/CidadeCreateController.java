@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.everis.academia.java.agendadigital.business.ICidadeBusiness;
 import com.everis.academia.java.agendadigital.business.impl.CidadeBusiness;
+import com.everis.academia.java.agendadigital.model.Cidade;
 
 @WebServlet(name = "cidade/createcontroller", urlPatterns = "/cidade/createcontroller")
 
@@ -29,7 +30,9 @@ public class CidadeCreateController extends HttpServlet {
 			String nome = request.getParameter("nome");
 
 			// Adicionar cidade
-			business.create(nome);
+			Cidade cidade = new Cidade();
+			cidade.setNome(nome);
+			business.create(cidade);
 
 			// Imprimir informaçao
 			PrintWriter out = response.getWriter();

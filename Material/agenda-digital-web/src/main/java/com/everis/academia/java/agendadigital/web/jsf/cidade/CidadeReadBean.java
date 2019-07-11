@@ -2,7 +2,7 @@ package com.everis.academia.java.agendadigital.web.jsf.cidade;
 
 import java.util.Collection;
 
-import javax.annotation.PostConstruct;
+//import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +17,16 @@ import com.everis.academia.java.agendadigital.model.Cidade;
 @RequestScope
 public class CidadeReadBean {
 	
+	@Autowired
+	private ICidadeBusiness business;
+	
+	public Collection<Cidade> getCidades() {
+
+		return business.read();
+	}
+	
+	/* Como estava antes:
+
 	@Autowired
 	private ICidadeBusiness business;
 	private Collection<Cidade> cidades;
@@ -36,5 +46,6 @@ public class CidadeReadBean {
 
 		this.cidades = cidades;
 	}
+	*/
 	
 }

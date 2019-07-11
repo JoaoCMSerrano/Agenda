@@ -4,12 +4,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
-
 import com.everis.academia.java.agendadigital.dao.ITipoServicoDAO;
 import com.everis.academia.java.agendadigital.model.TipoServico;
 
-@Repository
+//@Repository
 public class TipoServicoDAO implements ITipoServicoDAO{
 
 	public static List<TipoServico> tiposServico = new ArrayList<TipoServico>();
@@ -43,9 +41,9 @@ public class TipoServicoDAO implements ITipoServicoDAO{
 	}
 
 	@Override
-	public Boolean jaExisteTipoServico(String descricao) {
-		for(TipoServico tipoServico : tiposServico) {
-			if(tipoServico.getDescricao().trim().equalsIgnoreCase(descricao)) {
+	public Boolean jaExisteTipoServico(TipoServico tipoServico) {
+		for(TipoServico ts : tiposServico) {
+			if(ts.getDescricao().trim().equalsIgnoreCase(tipoServico.getDescricao())) {
 				return Boolean.TRUE;
 			}		
 		}

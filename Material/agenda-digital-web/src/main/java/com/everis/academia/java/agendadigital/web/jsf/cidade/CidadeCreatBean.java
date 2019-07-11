@@ -34,7 +34,7 @@ public class CidadeCreatBean {
 	public String createCidade() {
 	
 		try {
-			business.create(cidade.getNome());
+			business.create(cidade);
 			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, cidade.getNome(), ": registado com sucesso!"));
 			return "read";
 		} catch (BusinessException e) {

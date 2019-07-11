@@ -2,7 +2,6 @@ package com.everis.academia.java.agendadigital.web.jsf.tiposervico;
 
 import java.util.Collection;
 
-import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,19 +18,9 @@ public class TipoServicoReadBean {
 	
 	@Autowired
 	private ITipoServicoBusiness business;
-	private Collection<TipoServico> tiposServico;
-	
-	@PostConstruct
-	public void init() {
-		this.tiposServico = business.read();
-	}
 
 	public Collection<TipoServico> getTiposServico() {
-		return tiposServico;
-	}
-
-	public void setTiposServico(Collection<TipoServico> tiposServico) {
-		this.tiposServico = tiposServico;
+		return business.read();
 	}
 	
 }

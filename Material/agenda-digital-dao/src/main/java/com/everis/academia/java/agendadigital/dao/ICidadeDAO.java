@@ -13,6 +13,6 @@ public interface ICidadeDAO {
 	
 	void delete(Short id);
 	
-	Boolean jaExisteCidade(String nome);
+	Boolean jaExisteCidade(Cidade cidade);
 	
 }
