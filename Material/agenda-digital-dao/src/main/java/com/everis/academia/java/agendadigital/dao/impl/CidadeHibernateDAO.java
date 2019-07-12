@@ -69,10 +69,9 @@ public class CidadeHibernateDAO implements ICidadeDAO {
 		
 		Criteria criteria = session.createCriteria(Cidade.class);
 		
-		criteria.add(Restrictions.and(Restrictions.eq("nome", cidade.getNome()).ignoreCase()));
-		if (cidade.getCodigo() != null) {
-			criteria.add(Restrictions.ne("codigo", cidade.getCodigo()));
-		}				
+		criteria.add(Restrictions.and(
+				Restrictions.eq("nome", cidade.getNome()).ignoreCase(),
+				Restrictions.neOrIsNotNull("codigo", cidade.getCodigo())));				
 		criteria.setProjection(Projections.count("codigo"));
 		return (Long) criteria.uniqueResult() > 0;
 	}

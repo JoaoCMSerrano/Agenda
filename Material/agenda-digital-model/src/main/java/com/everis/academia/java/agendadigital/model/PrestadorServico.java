@@ -4,9 +4,12 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Transient;
@@ -23,33 +26,35 @@ public class PrestadorServico {
 	@Column(name = "COD_PS", unique = true, nullable = false)
 	private Integer codigo;
 	
-	@Column(name = "NOME_PS", unique = true, nullable = false, length = 50)
+	@Column(name = "NOME_PS", nullable = false)
 	private String nome;
-	
-	@Transient
+
+	@ManyToOne(fetch = FetchType.EAGER, targetEntity = Cidade.class)
+	@JoinColumn(name = "COD_CIDADE", nullable = false)
 	private Cidade cidade;
 	
-	@Column(name = "BAIRRO_PS", unique = true, nullable = false, length = 30)
+	@Column(name = "BAIRRO_PS")
 	private String bairro;
 	
-	@Column(name = "CEP_PS", unique = true, nullable = false)
+	@Column(name = "CEP_PS")
 	private String cep;
 	
 	@Transient
 	private TipoLogradouro tipoLogradouro;
 	
-	@Column(name = "LOGRADOURO_PS", unique = true, nullable = false)
+	@Column(name = "LOGRADOURO_PS")
 	private String logradouro;
 	
-	@Column(name = "COMPLEMENTO_PS", unique = true, nullable = false, length = 50)
+	@Column(name = "COMPLEMENTO_PS")
 	private String complemento;
 	
-	@Column(name = "NUMERO_PS", unique = true, nullable = false)
+	@Column(name = "NUMERO_PS")
 	private String numero;
 	
-	@Column(name = "EMAIL_PS", unique = true, nullable = false)
+	@Column(name = "EMAIL_PS")
 	private String email;
 	
+	//@OneToMany
 	@Transient
 	private Set<Telefone> telefones;
 	

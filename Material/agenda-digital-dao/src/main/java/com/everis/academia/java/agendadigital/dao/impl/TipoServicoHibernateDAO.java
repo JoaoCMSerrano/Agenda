@@ -67,10 +67,9 @@ public class TipoServicoHibernateDAO implements ITipoServicoDAO {
 
 		Criteria criteria = session.createCriteria(TipoServico.class);
 
-		criteria.add(Restrictions.and(Restrictions.eq("descricao", tipoServico.getDescricao()).ignoreCase()));
-		if (tipoServico.getCodigo() != null) {
-			criteria.add(Restrictions.ne("codigo", tipoServico.getCodigo()));
-		}				
+		criteria.add(Restrictions.and(
+				Restrictions.eq("descricao", tipoServico.getDescricao()).ignoreCase(),
+				Restrictions.neOrIsNotNull("codigo", tipoServico.getCodigo())));		
 		criteria.setProjection(Projections.count("codigo"));
 		return (Long) criteria.uniqueResult() > 0;
 

@@ -1,0 +1,7 @@
+<!-- 			<p:panelGrid>
+					<p:outputLabel for="cidade" value="Cidade: " />
+					<p:selectOneMenu id="cidade" value="#{prestadorServicoCreate.cidade.nome}">
+						<p:selectItem itemLabel="Escolha uma..." itemValue="" />
+            			<p:selectItems value="#{cidadeRead.cidades}" />
+					</p:selectOneMenu>
+				</p:panelGrid> -->

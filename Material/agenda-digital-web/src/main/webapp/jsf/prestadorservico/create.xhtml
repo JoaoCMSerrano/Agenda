@@ -1,6 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
  
     <h:head>
         <title>Agenda digital</title>
@@ -8,35 +9,31 @@
     <h:body>
 	    <h:form prependID="false">
    			<p:panel header="Criar Prestador de Servico">
-				<p:panelGrid>
+				<p:panelGrid columns="2">
 					<p:outputLabel for="nome" value="Nome: " />
 					<p:inputText id="nome" value="#{prestadorServicoCreate.prestadorServico.nome}" />
-				</p:panelGrid>
-<!-- 				<p:panelGrid>
+
 					<p:outputLabel for="cidade" value="Cidade: " />
-					<p:selectOneMenu id="cidade" value="#{cidadeRead.cidades}" />
-				</p:panelGrid> -->
-				<p:panelGrid>
+					<p:selectOneMenu id="cidade" value="#{prestadorServicoCreate.prestadorServico.cidade}" converter="cidadeConverter">
+						<f:selectItem itemLabel="Seleccionar" itemValue="" />
+            			<f:selectItems value="#{prestadorServicoCreate.cidades}" var="cidade" itemLabel="#{cidade.nome}"/>
+					</p:selectOneMenu>
+					
 					<p:outputLabel for="bairro" value="Bairro: " />
 					<p:inputText id="bairro" value="#{prestadorServicoCreate.prestadorServico.bairro}" />
-				</p:panelGrid>
-				<p:panelGrid>
+
 					<p:outputLabel for="cep" value="CEP: " />
 					<p:inputText id="cep" value="#{prestadorServicoCreate.prestadorServico.cep}" />
-				</p:panelGrid>
-				<p:panelGrid>
+					
 					<p:outputLabel for="logradouro" value="Logradouro: " />
 					<p:inputText id="logradouro" value="#{prestadorServicoCreate.prestadorServico.logradouro}" />
-				</p:panelGrid>
-				<p:panelGrid>
+
 					<p:outputLabel for="complemento" value="Complemento: " />
 					<p:inputText id="complemento" value="#{prestadorServicoCreate.prestadorServico.complemento}" />
-				</p:panelGrid>
-				<p:panelGrid>
+
 					<p:outputLabel for="numero" value="Numero: " />
 					<p:inputText id="numero" value="#{prestadorServicoCreate.prestadorServico.numero}" />
-				</p:panelGrid>
-				<p:panelGrid>
+
 					<p:outputLabel for="email" value="Email: " />
 					<p:inputText id="email" value="#{prestadorServicoCreate.prestadorServico.email}" />
 				</p:panelGrid>
