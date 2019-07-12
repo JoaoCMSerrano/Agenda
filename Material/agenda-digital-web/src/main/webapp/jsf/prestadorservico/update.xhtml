@@ -27,7 +27,13 @@
 				
 					<p:outputLabel value="CEP: " />
 					<p:inputText value="#{prestadorServicoUpdate.prestadorServico.cep}" />
-				
+									
+					<p:outputLabel for="tipoLogradouro" value="Tipo Logradouro: " />
+					<p:selectOneMenu id="tipoLogradouro" value="#{prestadorServicoUpdate.prestadorServico.tipoLogradouro}">
+						<f:selectItem itemLabel="Seleccionar" itemValue="" />
+            			<f:selectItems value="#{prestadorServicoCreate.tiposLogradouro}" var="tipoLogradouro" itemLabel="#{tipoLogradouro}"/>
+					</p:selectOneMenu>
+					
 					<p:outputLabel value="Logradouro: " />
 					<p:inputText value="#{prestadorServicoUpdate.prestadorServico.logradouro}" />
 				

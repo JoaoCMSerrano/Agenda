@@ -4,6 +4,8 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -39,7 +41,8 @@ public class PrestadorServico {
 	@Column(name = "CEP_PS")
 	private String cep;
 	
-	@Transient
+	@Enumerated(EnumType.STRING)
+	@Column(name = "TIPOLOGRADOURO_PS")
 	private TipoLogradouro tipoLogradouro;
 	
 	@Column(name = "LOGRADOURO_PS")

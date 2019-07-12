@@ -16,6 +16,7 @@ import org.springframework.web.context.annotation.RequestScope;
 import com.everis.academia.java.agendadigital.business.BusinessException;
 import com.everis.academia.java.agendadigital.business.ICidadeBusiness;
 import com.everis.academia.java.agendadigital.business.IPrestadorServicoBusiness;
+import com.everis.academia.java.agendadigital.enums.TipoLogradouro;
 
 @Component("prestadorServicoCreate")
 @ManagedBean(name = "prestadorServicoCreate")
@@ -32,6 +33,10 @@ public class PrestadorServicoCreateBean {
 	public Collection<Cidade> getCidades() {
 
 		return cidadeBusiness.read();
+	}
+	
+	public TipoLogradouro[] getTiposLogradouro(){
+		return TipoLogradouro.values();
 	}
 	
 	public PrestadorServico getPrestadorServico() {
