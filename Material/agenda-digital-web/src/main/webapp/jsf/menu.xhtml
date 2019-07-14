@@ -1,0 +1,24 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+		<title>Agenda digital</title>
+	</h:head>
+	<h:body>
+		<h:form>
+			<p:panel header="Agenda digital">
+				<p:menu>
+			        <p:submenu label="Prestadores de serviços">
+			            <p:menuitem value="Lista de prestadores" url="prestadorservico/read.xhtml" />
+			            <p:menuitem value="Adicionar novo prestador" url="prestadorservico/create.xhtml" />
+			        </p:submenu>
+			        <p:submenu label="Outras Consultas">
+			            <p:menuitem value="Lista de cidades" url="cidade/read.xhtml" />
+			            <p:menuitem value="Lista de serviços" url="tiposervico/read.xhtml" />
+			        </p:submenu>
+		  		</p:menu>
+		  	</p:panel>
+		</h:form>
+	</h:body>
+</html>
