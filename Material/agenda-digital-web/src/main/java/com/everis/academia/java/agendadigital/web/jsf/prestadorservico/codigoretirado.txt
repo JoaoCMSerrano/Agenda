@@ -1,0 +1,26 @@
+Apesar de funcionar no create apresentando na tela, falta resolver o problema de guardar e apresentar no read
+
+	<p:outputLabel for="servicosCredenciados" value="Serviços credenciados: " />
+	<p:selectManyCheckbox id="servicosCredenciados" value="#{prestadorServicoCreate.prestadorServico.servicosCredenciados}" layout="grid" columns="3">
+		 <f:selectItems value="#{prestadorServicoCreate.servicosCredenciados}" var="tipoServico" itemLabel="#{tipoServico.descricao}" />
+	</p:selectManyCheckbox>
+
+read()
+
+	<p:column> -->
+		<f:facet name="header">
+			<p:outputLabel value="Serviços Credenciados" />
+		</f:facet>
+		<h:outputText value="#{prestadorServico.servicosCredenciados}" />
+	</p:column>
+	
+			
+PrestadorServicoCreateBean	
+
+	@Autowired
+	private ITipoServicoBusiness tipoServicoBusiness;
+	
+	public Collection<TipoServico> getServicosCredenciados() {
+
+		return tipoServicoBusiness.read();
+	}

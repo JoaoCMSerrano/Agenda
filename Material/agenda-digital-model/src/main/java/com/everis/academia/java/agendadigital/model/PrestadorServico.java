@@ -61,6 +61,9 @@ public class PrestadorServico {
 	@Transient
 	private Set<Telefone> telefones;
 	
+//	@ManyToMany(fetch = FetchType.EAGER, targetEntity = TipoServico.class)
+//	@JoinTable(name = "TB_SERVICOSCREDENCIADOS", joinColumns = {
+//			@JoinColumn(name = "COD_PRESTADORSERVICO")}, inverseJoinColumns = {@JoinColumn(name = "COD_TIPOSERVICO")})	
 	@Transient
 	private Set<TipoServico> servicosCredenciados;
 	

@@ -18,7 +18,7 @@ public class TipoServico {
 	@Column(name = "COD_TIPOSERVICO", unique = true, nullable = false)
 	private Short codigo;
 	
-	@Column(name = "DESCRICAO_TIPOSERVICO", unique = true, nullable = false, length = 15)
+	@Column(name = "DESCRICAO_TIPOSERVICO", unique = true, nullable = false)
 	private String descricao;
 
 	public TipoServico() {
